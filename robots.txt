@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anasneymarswb2-debug.github.io/Line-Size-Manger/sitemap.xml
