@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="fonts/fonts.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Line Sizing Manager","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/app/","applicationCategory":"EngineeringApplication","operatingSystem":"Any (web browser)","softwareVersion":"4.1","isAccessibleForFree":true,
+ "author":{"@type":"Person","name":"Muhammad Anas","jobTitle":"Process Design Engineer","sameAs":["https://www.linkedin.com/in/muhammad-anas-a630a1227"]},
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
  "description":"Line sizing calculator for process plants: liquid, gas and steam, two-phase (API RP 14E), control valve sizing (IEC 60534-2-1), PSV inlet and outlet lines (API 520 Part II / API 521) and ASME B31.3 pipe wall thickness, with Crane TP-410 fittings and EN 10220 / ASME B36.10M pipe tables.",
  "featureList":["Liquid line sizing with NPSH available","Compressible gas and steam line sizing","Two-phase erosional velocity (API RP 14E)","Control valve sizing (IEC 60534-2-1)","PSV inlet loss and back pressure (API 520 Part II, API 521)","ASME B31.3 wall thickness","Crane TP-410 fittings with reducers and expanders","Excel line list and calculation sheets"]}
@@ -72,6 +73,7 @@ h2{font-size:30px;line-height:1.2;margin:0 0 10px;letter-spacing:-.01em;text-wra
 .card h3{margin:0 0 6px;font-size:18px;display:flex;gap:10px;align-items:baseline}
 .card h3 .k{font:600 13px var(--font-mono);color:var(--accent)}
 .card p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.author{max-width:760px}.author p b{color:var(--ink)}.author .btn.ghost{border-color:var(--accent);color:var(--accent)}.author .btn.ghost:hover{background:var(--accent-soft)}.author .note{font-size:14px;margin:0}
 .std{font:12.5px var(--font-mono);color:var(--ink);background:var(--accent-soft);border-radius:4px;padding:2px 7px;display:inline-block}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
 .steps li{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;position:relative}
@@ -103,7 +105,7 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
   <div class="w">
     <nav class="top" aria-label="Main">
       <a class="brand" href="./"><img src="favicon.svg" alt="" width="30" height="30">Line Sizing Manager</a>
-      <ul><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
+      <ul><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li class="hide-s"><a href="#author">Author</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
     </nav>
     <div class="hero">
       <div>
@@ -194,7 +196,17 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
   <details><summary>Which standards and methods does it use?</summary><p>Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness. Pipe dimensions follow ASME B36.10M/B36.19M or EN 10220.</p></details>
   <details><summary>Is my data stored or sent anywhere?</summary><p>No. The page makes no network requests while you work. Saved lines stay in your own browser, and exports download straight to your computer.</p></details>
   <details><summary>Can I use the results for design?</summary><p>Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specification and applicable codes before design, procurement or construction. The sizing criteria are typical EPC values and can be edited to match your project.</p></details>
-  <details><summary>Can my company use its own sizing criteria?</summary><p>Yes. Every velocity and pressure-drop limit is editable on the page. A configured company edition, a Windows desktop version and a criteria setup service are available on request.</p></details>
+  <details><summary>Can my company use its own sizing criteria?</summary><p>Yes. Every velocity and pressure-drop limit is editable on the page. Suggestions for new features are welcome through LinkedIn.</p></details>
+</div></section>
+
+<section class="s" id="author"><div class="w">
+  <h2>About the author</h2>
+  <div class="card author">
+    <p><b>Muhammad Anas</b> · Process Design Engineer</p>
+    <p>Five years in process design at a large ammonia–urea fertilizer complex, working on hydraulics, PSV sizing, control valves, revamps and process safety. I built Line Sizing Manager and share it free so students and engineers can learn how line sizing really works and run quick screening checks.</p>
+    <p><a class="btn ghost" href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
+    <p class="note">Questions, corrections and feature ideas are welcome. Send me a message on LinkedIn.</p>
+  </div>
 </div></section>
 
 <section class="cta-band"><div class="w">
@@ -207,13 +219,13 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
 <footer><div class="w cols">
   <div id="terms">
     <h3>Terms of use</h3>
-    <p>© 2026 Line Sizing Manager. All rights reserved. The calculator is provided free for evaluation and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
+    <p>© 2026 Muhammad Anas · Line Sizing Manager. All rights reserved. The calculator is provided free for learning and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
     <h3 id="privacy">Privacy</h3>
     <p>This site uses no cookies, no analytics and no tracking. Everything you type stays on your device.</p>
   </div>
   <div>
     <h3>Line Sizing Manager</h3>
-    <p><a href="app/">Open the calculator</a><br><a href="#validation">Validation</a><br><a href="#faq">FAQ</a></p>
+    <p><a href="app/">Open the calculator</a><br><a href="#validation">Validation</a><br><a href="#faq">FAQ</a><br><a href="#author">About the author</a><br><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
     <p>Version 4.1 · November 2026</p>
   </div>
 </div></footer>
