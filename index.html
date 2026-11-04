@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://anasneymarswb2-debug.github.io/Line-Size-Manger/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="referrer" content="no-referrer">
+<script>if(window.top!==window.self){try{window.top.location.replace(window.self.location.href)}catch(e){document.documentElement.style.display="none"}}</script>
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Line Sizing Manager — line sizing calculator for process plants">
@@ -18,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="fonts/fonts.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Line Sizing Manager","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/app/","applicationCategory":"EngineeringApplication","operatingSystem":"Any (web browser)","softwareVersion":"4.1","isAccessibleForFree":true,
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Line Sizing Manager","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/app/","applicationCategory":"EngineeringApplication","operatingSystem":"Any (web browser)","isAccessibleForFree":true,
  "author":{"@type":"Person","name":"Muhammad Anas","jobTitle":"Process Design Engineer","sameAs":["https://www.linkedin.com/in/muhammad-anas-a630a1227"]},
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
  "description":"Line sizing calculator for process plants: liquid, gas and steam, two-phase (API RP 14E), control valve sizing (IEC 60534-2-1), PSV inlet and outlet lines (API 520 Part II / API 521) and ASME B31.3 pipe wall thickness, with Crane TP-410 fittings and EN 10220 / ASME B36.10M pipe tables.",
@@ -100,10 +101,61 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
 @media (prefers-reduced-motion: reduce){.btn,.card{transition:none}.btn:hover{transform:none}}
 @media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:20px}h1{font-size:36px}.grid3,.steps{grid-template-columns:1fr}.val{grid-template-columns:1fr}.who{grid-template-columns:1fr 1fr}.stats .w{grid-template-columns:1fr 1fr}.stat:nth-child(3){border-left:0}footer .cols{grid-template-columns:1fr}}
 @media (max-width:520px){.w{padding:0 16px}nav.top ul li.hide-s{display:none}.who{grid-template-columns:1fr}}
+
+/* v2 look: heading face, gradient accents, formal animated background (flow lines through piping, drifting grid). All motion stops for prefers-reduced-motion. */
+:root{--font-head:"Plus Jakarta Sans","Inter","Segoe UI",Arial,sans-serif;--grad:linear-gradient(90deg,#5ed3cc 0%,#7cc4ff 100%);--grad-btn:linear-gradient(135deg,#3cc6c0 0%,#5ed3cc 55%,#7fd8ff 100%)}
+h1,h2,h3,.brand,summary{font-family:var(--font-head)}
+h1{font-weight:800;letter-spacing:-.032em}h2{font-weight:800;letter-spacing:-.025em}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+header.mast,.cta-band{position:relative;overflow:hidden;isolation:isolate}
+header.mast>.w,.cta-band>.w{position:relative;z-index:1}
+.bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.bg-grid{position:absolute;inset:-48px;background-image:linear-gradient(rgba(160,200,230,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(160,200,230,.06) 1px,transparent 1px);background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse 75% 70% at 60% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 75% 70% at 60% 40%,#000 30%,transparent 80%);animation:gridpan 36s linear infinite}
+@keyframes gridpan{to{transform:translate3d(48px,48px,0)}}
+.bg-glow{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55}
+.bg-glow.g1{width:520px;height:520px;right:-120px;top:-180px;background:radial-gradient(circle,rgba(60,198,192,.55),transparent 65%);animation:drift1 22s ease-in-out infinite alternate}
+.bg-glow.g2{width:460px;height:460px;left:-160px;bottom:-200px;background:radial-gradient(circle,rgba(70,130,220,.45),transparent 65%);animation:drift2 26s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate3d(-140px,90px,0) scale(1.12)}}
+@keyframes drift2{to{transform:translate3d(160px,-70px,0) scale(1.1)}}
+svg.flow{position:absolute;inset:0;width:100%;height:100%;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.12) 12%,rgba(0,0,0,.12) 46%,#000 62%,#000 100%),linear-gradient(180deg,transparent 0,#000 110px);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.12) 12%,rgba(0,0,0,.12) 46%,#000 62%,#000 100%),linear-gradient(180deg,transparent 0,#000 110px);mask-composite:intersect}
+@media (max-width:900px){svg.flow{opacity:.35}}
+.flow path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.flow .pipe path{stroke:rgba(140,190,220,.10);stroke-width:6}
+.flow .pulse path{stroke:rgba(94,211,204,.75);stroke-width:2.2;stroke-dasharray:60 940;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(94,211,204,.8));animation:flow 9s linear infinite}
+.flow .pulse .p2{animation-duration:7s;animation-delay:-2s}.flow .pulse .p3{animation-duration:12s;animation-delay:-5s;stroke:rgba(124,196,255,.7)}.flow .pulse .p4{animation-duration:6s;animation-delay:-1s}
+@keyframes flow{to{stroke-dashoffset:0}}
+.flow .node circle{fill:#0b1f33;stroke:rgba(94,211,204,.6);stroke-width:2;animation:node 4s ease-in-out infinite}
+.flow .node circle:nth-child(2){animation-delay:-1.3s}.flow .node circle:nth-child(3){animation-delay:-2.6s}
+@keyframes node{50%{stroke:rgba(94,211,204,.15)}}
+.bg.small .bg-glow.g2{display:none}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(94,211,204,.35);background:rgba(94,211,204,.08);border-radius:999px;padding:6px 14px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#5ed3cc;box-shadow:0 0 0 0 rgba(94,211,204,.6);animation:ping 2.4s ease-out infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(94,211,204,0)}100%{box-shadow:0 0 0 0 rgba(94,211,204,0)}}
+.btn.primary{background:var(--grad-btn);color:#06202c;box-shadow:0 8px 24px rgba(60,198,192,.28)}.btn.primary:hover{background:var(--grad-btn);filter:brightness(1.06);box-shadow:0 10px 30px rgba(60,198,192,.4)}
+.stats{position:relative}.stats::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#0b7a7a,#3cc6c0,#7cc4ff,#3cc6c0,#0b7a7a);background-size:200% 100%;animation:sheen 10s linear infinite}
+@keyframes sheen{to{background-position:200% 0}}
+.stat b{background:linear-gradient(90deg,#0b7a7a,#1d6fb8);-webkit-background-clip:text;background-clip:text;color:transparent}
+section.s.alt{background:var(--panel)}
+section.s.alt .card,section.s.alt details,section.s.alt .steps li,section.s.alt table{background:var(--bg)}
+.card{position:relative;overflow:hidden}.card::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}.card:hover::before{transform:scaleX(1)}
+.card h3 .k{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:7px;background:var(--accent-soft);color:var(--accent);font-size:12.5px}
+.steps li::before{background:linear-gradient(135deg,#0b7a7a,#1d6fb8)}
+h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;margin-top:12px;background:var(--grad)}
+.cta-band h2::after{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stat b{background:var(--grad);-webkit-background-clip:text;background-clip:text}}
+@media (prefers-reduced-motion: reduce){.bg-grid,.bg-glow,.flow .pulse path,.flow .node circle,.eyebrow .dot,.stats::before{animation:none}.flow .pulse{display:none}.card::before{transition:none}}
+@media (max-width:900px){.flow .pipe path{stroke-width:4}}
 </style>
 </head>
 <body>
 <header class="mast">
+<div class="bg" aria-hidden="true"><div class="bg-grid"></div><div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+  <svg class="flow" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice">
+    <g class="pipe"><path d="M-20 560H340a24 24 0 0 0 24-24V444a24 24 0 0 1 24-24H880a24 24 0 0 0 24-24V250a24 24 0 0 1 24-24H1460"/><path d="M-20 110H200a24 24 0 0 1 24 24V300a24 24 0 0 0 24 24H560"/><path d="M1460 70H1150a24 24 0 0 0-24 24V560a24 24 0 0 1-24 24H660a24 24 0 0 0-24 24V660"/></g>
+    <g class="pulse"><path pathLength="1000" class="p1" d="M-20 560H340a24 24 0 0 0 24-24V444a24 24 0 0 1 24-24H880a24 24 0 0 0 24-24V250a24 24 0 0 1 24-24H1460"/><path pathLength="1000" class="p2" d="M-20 110H200a24 24 0 0 1 24 24V300a24 24 0 0 0 24 24H560"/><path pathLength="1000" class="p3" d="M1460 70H1150a24 24 0 0 0-24 24V560a24 24 0 0 1-24 24H660a24 24 0 0 0-24 24V660"/></g>
+    <g class="node"><circle cx="560" cy="324" r="7"/><circle cx="364" cy="490" r="4"/><circle cx="1126" cy="330" r="4"/></g>
+  </svg></div>
   <div class="w">
     <nav class="top" aria-label="Main">
       <a class="brand" href="./"><img src="favicon.svg" alt="" width="30" height="30">Line Sizing Manager</a>
@@ -111,10 +163,10 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
     </nav>
     <div class="hero">
       <div>
-        <div class="eyebrow">Free · browser-based · v4.1</div>
-        <h1>Line sizing calculator for process plants</h1>
+        <div class="eyebrow"><span class="dot"></span>Free · browser-based · validated</div>
+        <h1>Line sizing calculator <span class="grad">for process plants</span></h1>
         <p class="lead">Size liquid, gas, steam and two-phase lines, control valves and relief-valve piping in one place. Every criterion is shown in colour, and the calculations are checked against reference data.</p>
-        <div class="ctas"><a class="btn primary" href="app/">Open the calculator — free</a><a class="btn ghost" href="#validation">How it was validated</a></div>
+        <div class="ctas"><a class="btn primary" href="app/">Open the calculator — free</a></div>
         <p class="trust">No sign-up · works offline once loaded · nothing you enter leaves your device</p>
       </div>
       <div class="shot"><img src="shot-liquid.jpg" width="1200" height="760" alt="Line Sizing Manager showing a liquid ammonia pump suction line: green 'line size acceptable' verdict, velocity and pressure-drop gauges, and the size ladder."></div>
@@ -144,7 +196,7 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
   <p class="sub" style="margin-top:20px">Plus an itemised fittings editor (elbows, tees, valves, reducers and expanders at any size), °C/°F and m/ft units, ASME B36.10M or EN 10220 pipe, Excel line lists, calculation sheets and bulk import pasted from Excel.</p>
 </div></section>
 
-<section class="s"><div class="w">
+<section class="s alt"><div class="w">
   <h2>How it works</h2>
   <p class="sub">Built the way a process engineer sizes a line, so the result reads like a calculation sheet rather than a single number.</p>
   <ol class="steps">
@@ -154,8 +206,37 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
   </ol>
 </div></section>
 
-<section class="s" id="validation"><div class="w">
-  <h2>Checked against reference data</h2>
+<section class="s"><div class="w">
+  <h2>Who it is for</h2>
+  <div class="who" style="margin-top:20px">
+    <div class="card"><h3>Process engineers</h3><p>Quick, defensible line and valve sizing with the criteria shown, for studies, revamps and troubleshooting.</p></div>
+    <div class="card"><h3>EPC teams</h3><p>Consistent criteria, line lists and calculation sheets with document control on every page.</p></div>
+    <div class="card"><h3>Plant operations</h3><p>Check whether an existing line, valve or PSV installation can take a new rate.</p></div>
+    <div class="card"><h3>Students</h3><p>See how velocity, friction factor, fittings and NPSH interact as you change the size.</p></div>
+  </div>
+</div></section>
+
+<section class="s alt" id="faq"><div class="w">
+  <h2>Questions</h2>
+  <details><summary>Is it free?</summary><p>Yes. The web edition is free and needs no sign-up. It runs entirely in your browser.</p></details>
+  <details><summary>Which standards and methods does it use?</summary><p>Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness. Pipe dimensions follow ASME B36.10M/B36.19M or EN 10220.</p></details>
+  <details><summary>Is my data stored or sent anywhere?</summary><p>No. The page makes no network requests while you work. Saved lines stay in your own browser, and exports download straight to your computer.</p></details>
+  <details><summary>Can I use the results for design?</summary><p>Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specification and applicable codes before design, procurement or construction. The sizing criteria are typical EPC values and can be edited to match your project.</p></details>
+  <details><summary>Can my company use its own sizing criteria?</summary><p>Yes. Every velocity and pressure-drop limit is editable on the page. Suggestions for new features are welcome through LinkedIn.</p></details>
+</div></section>
+
+<section class="s" id="author"><div class="w">
+  <h2>About the author</h2>
+  <div class="card author">
+    <p><b>Muhammad Anas</b> · Process Design Engineer</p>
+    <p>Five years in process design at a large ammonia–urea fertilizer complex, working on hydraulics, PSV sizing, control valves, revamps and process safety. I built Line Sizing Manager and share it free so students and engineers can learn how line sizing really works and run quick screening checks.</p>
+    <p><a class="btn ghost" href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
+    <p class="note">Questions, corrections and feature ideas are welcome. Send me a message on LinkedIn.</p>
+  </div>
+</div></section>
+
+<section class="s alt" id="validation"><div class="w">
+  <h2>How it was validated</h2>
   <p class="sub">The calculator carries its own self-test: 31 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab.</p>
   <div class="val">
     <table>
@@ -182,36 +263,12 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
   </div>
 </div></section>
 
-<section class="s"><div class="w">
-  <h2>Who it is for</h2>
-  <div class="who" style="margin-top:20px">
-    <div class="card"><h3>Process engineers</h3><p>Quick, defensible line and valve sizing with the criteria shown, for studies, revamps and troubleshooting.</p></div>
-    <div class="card"><h3>EPC teams</h3><p>Consistent criteria, line lists and calculation sheets with document control on every page.</p></div>
-    <div class="card"><h3>Plant operations</h3><p>Check whether an existing line, valve or PSV installation can take a new rate.</p></div>
-    <div class="card"><h3>Students</h3><p>See how velocity, friction factor, fittings and NPSH interact as you change the size.</p></div>
-  </div>
-</div></section>
-
-<section class="s" id="faq"><div class="w">
-  <h2>Questions</h2>
-  <details><summary>Is it free?</summary><p>Yes. The web edition is free and needs no sign-up. It runs entirely in your browser.</p></details>
-  <details><summary>Which standards and methods does it use?</summary><p>Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness. Pipe dimensions follow ASME B36.10M/B36.19M or EN 10220.</p></details>
-  <details><summary>Is my data stored or sent anywhere?</summary><p>No. The page makes no network requests while you work. Saved lines stay in your own browser, and exports download straight to your computer.</p></details>
-  <details><summary>Can I use the results for design?</summary><p>Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specification and applicable codes before design, procurement or construction. The sizing criteria are typical EPC values and can be edited to match your project.</p></details>
-  <details><summary>Can my company use its own sizing criteria?</summary><p>Yes. Every velocity and pressure-drop limit is editable on the page. Suggestions for new features are welcome through LinkedIn.</p></details>
-</div></section>
-
-<section class="s" id="author"><div class="w">
-  <h2>About the author</h2>
-  <div class="card author">
-    <p><b>Muhammad Anas</b> · Process Design Engineer</p>
-    <p>Five years in process design at a large ammonia–urea fertilizer complex, working on hydraulics, PSV sizing, control valves, revamps and process safety. I built Line Sizing Manager and share it free so students and engineers can learn how line sizing really works and run quick screening checks.</p>
-    <p><a class="btn ghost" href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
-    <p class="note">Questions, corrections and feature ideas are welcome. Send me a message on LinkedIn.</p>
-  </div>
-</div></section>
-
-<section class="cta-band"><div class="w">
+<section class="cta-band"><div class="bg small" aria-hidden="true"><div class="bg-grid"></div><div class="bg-glow g1"></div><div class="bg-glow g2"></div>
+  <svg class="flow" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice">
+    <g class="pipe"><path d="M-20 560H340a24 24 0 0 0 24-24V444a24 24 0 0 1 24-24H880a24 24 0 0 0 24-24V250a24 24 0 0 1 24-24H1460"/><path d="M-20 110H200a24 24 0 0 1 24 24V300a24 24 0 0 0 24 24H560"/><path d="M1460 70H1150a24 24 0 0 0-24 24V560a24 24 0 0 1-24 24H660a24 24 0 0 0-24 24V660"/></g>
+    <g class="pulse"><path pathLength="1000" class="p1" d="M-20 560H340a24 24 0 0 0 24-24V444a24 24 0 0 1 24-24H880a24 24 0 0 0 24-24V250a24 24 0 0 1 24-24H1460"/><path pathLength="1000" class="p2" d="M-20 110H200a24 24 0 0 1 24 24V300a24 24 0 0 0 24 24H560"/><path pathLength="1000" class="p3" d="M1460 70H1150a24 24 0 0 0-24 24V560a24 24 0 0 1-24 24H660a24 24 0 0 0-24 24V660"/></g>
+    <g class="node"><circle cx="560" cy="324" r="7"/><circle cx="364" cy="490" r="4"/><circle cx="1126" cy="330" r="4"/></g>
+  </svg></div><div class="w">
   <h2>Size your next line in a couple of minutes</h2>
   <p>Open the calculator, load an example, and press ▶ until it turns green.</p>
   <a class="btn primary" href="app/">Open the calculator — free</a>
@@ -227,8 +284,7 @@ footer h3{font-size:14px;color:var(--ink);margin:0 0 6px}
   </div>
   <div>
     <h3>Line Sizing Manager</h3>
-    <p><a href="app/">Open the calculator</a><br><a href="#validation">Validation</a><br><a href="#faq">FAQ</a><br><a href="#author">About the author</a><br><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-    <p>Version 4.1 · November 2026</p>
+    <p><a href="app/">Open the calculator</a><br><a href="#faq">FAQ</a><br><a href="#validation">How it was validated</a><br><a href="#author">About the author</a><br><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
   </div>
 </div></footer>
 </body>

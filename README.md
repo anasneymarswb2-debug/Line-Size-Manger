@@ -4,4 +4,4 @@ Free browser-based line sizing calculator for process plants: liquid, gas & stea
 
 **Website:** https://anasneymarswb2-debug.github.io/Line-Size-Manger/
 
-© 2026 Line Sizing Manager. All rights reserved. This repository hosts the published web edition only. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission. Fonts: IBM Plex, SIL Open Font License 1.1 (see `fonts/`). Excel export: SheetJS Community Edition, Apache License 2.0.
+© 2026 Muhammad Anas · Line Sizing Manager. All rights reserved. This repository hosts the published web edition only. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission. Fonts: Inter, Plus Jakarta Sans and JetBrains Mono, SIL Open Font License 1.1 (see `fonts/`). Excel export: SheetJS Community Edition, Apache License 2.0.
