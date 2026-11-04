@@ -146,6 +146,18 @@ h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;margi
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .stat b{background:var(--grad);-webkit-background-clip:text;background-clip:text}}
 @media (prefers-reduced-motion: reduce){.bg-grid,.bg-glow,.flow .pulse path,.flow .node circle,.eyebrow .dot,.stats::before{animation:none}.flow .pulse{display:none}.card::before{transition:none}}
 @media (max-width:900px){.flow .pipe path{stroke-width:4}}
+
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.tool{display:block;text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:border-color .15s,box-shadow .15s,transform .15s}
+.tool:hover{border-color:#7fcfcb;box-shadow:0 10px 28px rgba(11,31,51,.10);transform:translateY(-2px)}
+.tool::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--grad)}
+.tool .tk{font:600 12px var(--font-mono);letter-spacing:.1em;color:var(--accent)}
+.tool.new .tk{color:#b06a00}
+.tool h3{font-size:22px;margin:8px 0 8px;letter-spacing:-.015em}
+.tool p{color:var(--muted);margin:0 0 14px;font-size:15px}
+.tool .go{font-weight:600;color:var(--accent)}
+@media (max-width:900px){.tools{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){.tool{transition:none}.tool:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -159,14 +171,14 @@ h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;margi
   <div class="w">
     <nav class="top" aria-label="Main">
       <a class="brand" href="./"><img src="favicon.svg" alt="" width="30" height="30">Line Sizing Manager</a>
-      <ul><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li class="hide-s"><a href="#author">Author</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
+      <ul><li class="hide-s"><a href="#tools">Tools</a></li><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li class="hide-s"><a href="#author">Author</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
     </nav>
     <div class="hero">
       <div>
         <div class="eyebrow"><span class="dot"></span>Free · browser-based · validated</div>
         <h1>Line sizing calculator <span class="grad">for process plants</span></h1>
         <p class="lead">Size liquid, gas, steam and two-phase lines, control valves and relief-valve piping in one place. Every criterion is shown in colour, and the calculations are checked against reference data.</p>
-        <div class="ctas"><a class="btn primary" href="app/">Open the calculator — free</a></div>
+        <div class="ctas"><a class="btn primary" href="app/">Open the calculator — free</a><a class="btn ghost" href="valve/">Control valve sizing →</a></div>
         <p class="trust">No sign-up · works offline once loaded · nothing you enter leaves your device</p>
       </div>
       <div class="shot"><img src="shot-liquid.jpg" width="1200" height="760" alt="Line Sizing Manager showing a liquid ammonia pump suction line: green 'line size acceptable' verdict, velocity and pressure-drop gauges, and the size ladder."></div>
@@ -180,6 +192,15 @@ h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;margi
   <div class="stat"><b>26</b><span>Crane fittings and valves</span></div>
   <div class="stat"><b>ASME · EN</b><span>pipe tables, metric and US units</span></div>
 </div></div>
+
+<section class="s" id="tools"><div class="w">
+  <h2>Two tools for process engineers</h2>
+  <p class="sub">Both run in your browser, share the same validated property library, and export Excel and calculation sheets.</p>
+  <div class="tools">
+    <a class="tool" href="app/"><span class="tk">01 · FREE</span><h3>Line Sizing Manager</h3><p>Liquid, gas, steam and two-phase lines, fittings ΔP, PSV inlet and outlet lines and B31.3 wall thickness, sized iteratively against EPC criteria.</p><span class="go">Open the line sizing calculator →</span></a>
+    <a class="tool new" href="valve/"><span class="tk">02 · NEW · MEMBERS ONLY 🔒</span><h3>Control Valve Sizing Manager</h3><p>IEC 60534-2-1 Cv for liquid, gas, steam and two-phase flow, cavitation and flashing, IEC 60534-8-3/8-4 noise, actuator sizing, datasheet and Excel valve list.</p><span class="go">Sign in to the control valve calculator →</span></a>
+  </div>
+</div></section>
 
 <main>
 <section class="s" id="modules"><div class="w">
@@ -284,7 +305,7 @@ h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;margi
   </div>
   <div>
     <h3>Line Sizing Manager</h3>
-    <p><a href="app/">Open the calculator</a><br><a href="#faq">FAQ</a><br><a href="#validation">How it was validated</a><br><a href="#author">About the author</a><br><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <p><a href="app/">Line sizing calculator</a><br><a href="valve/">Control valve sizing (members)</a><br><a href="#faq">FAQ</a><br><a href="#validation">How it was validated</a><br><a href="#author">About the author</a><br><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
   </div>
 </div></footer>
 </body>
