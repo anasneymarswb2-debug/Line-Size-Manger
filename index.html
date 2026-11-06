@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Line Sizing Manager — line sizing calculator for process plants">
-<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 157 of 158 validation checks pass against reference data.">
+<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 220 of 221 validation checks pass against reference data.">
 <meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/">
 <meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -23,13 +23,13 @@
  "author":{"@type":"Person","name":"Muhammad Anas","jobTitle":"Process Design Engineer","sameAs":["https://www.linkedin.com/in/muhammad-anas-a630a1227"]},
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
  "description":"Line sizing calculator for process plants: liquid, gas and steam, two-phase (API RP 14E), control valve sizing (IEC 60534-2-1), PSV inlet and outlet lines (API 520 Part II / API 521) and ASME B31.3 pipe wall thickness, with Crane TP-410 fittings and EN 10220 / ASME B36.10M pipe tables.",
- "featureList":["Liquid line sizing with NPSH available","Compressible gas and steam line sizing","Two-phase erosional velocity (API RP 14E)","Control valve sizing (IEC 60534-2-1)","PSV inlet loss and back pressure (API 520 Part II, API 521)","ASME B31.3 wall thickness","Crane TP-410 fittings with reducers and expanders","Excel line list and calculation sheets"]}
+ "featureList":["Liquid line sizing with NPSH available","Compressible gas and steam line sizing","Two-phase erosional velocity (API RP 14E)","Control valve sizing (IEC 60534-2-1)","PSV inlet loss and back pressure (API 520 Part II, API 521)","ASME B31.3 wall thickness","Crane TP-410 fittings with reducers and expanders","Excel and PDF line list and calculation sheets","Two-phase flow regime map (Mandhane) with slug flagging","Gas line erosional velocity check (API RP 14E)","Heat loss and insulation thickness check for hot and cold lines"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
  {"@type":"Question","name":"Is Line Sizing Manager free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The web edition is free and needs no sign-up. It runs entirely in your browser."}},
  {"@type":"Question","name":"Which standards and methods does it use?","acceptedAnswer":{"@type":"Answer","text":"Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water properties, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness."}},
- {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 37 reference cases. 157 of 158 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
+ {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 90 reference cases. 220 of 221 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
  {"@type":"Question","name":"Is my data stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing you enter leaves your device. The page makes no network requests while you work, and saved lines stay in your own browser."}},
  {"@type":"Question","name":"Can I use the results for design?","acceptedAnswer":{"@type":"Answer","text":"Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specifications and applicable codes before design, procurement or construction."}}]}
 </script>
@@ -70,6 +70,8 @@ section.s{padding:64px 0;border-bottom:1px solid var(--line)}
 h2{font-size:32px;line-height:1.18;margin:0 0 10px;letter-spacing:-.022em;font-weight:700;text-wrap:balance}
 .sub{color:var(--muted);max-width:68ch;margin:0 0 28px}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid3.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1100px){.grid3.g4{grid-template-columns:repeat(2,1fr)}}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px;box-shadow:0 1px 2px rgba(11,31,51,.05);transition:border-color .15s,box-shadow .15s}.card:hover{border-color:#b9d9d8;box-shadow:0 6px 18px rgba(11,31,51,.08)}
 .card h3{margin:0 0 6px;font-size:18px;letter-spacing:-.01em;display:flex;gap:10px;align-items:baseline}
 .card h3 .k{font:600 13px var(--font-mono);color:var(--accent)}
@@ -246,8 +248,8 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 <section class="dash" id="dashboard"><div class="w">
   <div class="dh rv"><span class="eye2">LIVE ENGINEERING DASHBOARD</span><h2>What a sizing run looks like</h2><p class="sub">A real case from the calculator: cooling water at 100 m³/h on pump discharge, NPS 2 to 8, Schedule 40 carbon steel. Every number below comes from the same engine you use.</p></div>
   <div class="kpis">
-    <div class="kpi rv"><span class="kl">Calculation modules</span><b class="cnt" data-to="7">0</b><span class="ks">liquid · gas · two-phase · wall · Cv · PSV · fittings</span></div>
-    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="157">0</span><small> / 158</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
+    <div class="kpi rv"><span class="kl">Calculation modules</span><b class="cnt" data-to="8">0</b><span class="ks">liquid · gas · two-phase · wall · Cv · PSV · fittings · insulation</span></div>
+    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="220">0</span><small> / 221</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
     <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="20">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
     <div class="kpi rv"><span class="kl">Crane fittings &amp; valves</span><b class="cnt" data-to="26">0</b><span class="ks">K = n·fT with reducers &amp; expanders</span></div>
   </div>
@@ -309,17 +311,19 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 </div></section>
 
 <section class="s" id="modules"><div class="w">
-  <h2>Seven modules, one workflow</h2>
+  <h2>Eight modules, one workflow</h2>
   <p class="sub">Pick the service and fluid, enter flow and conditions, and step the pipe size with ▶ until the verdict turns green. The size ladder marks the smallest size that passes.</p>
-  <div class="grid3">
+  <div class="grid3 g4">
     <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h7l2-3 2 6 2-3h5"/></svg></span><span class="k">A</span>Liquid lines</h3><p>Velocity and ΔP limits by service and size band, minimum-flow check, NPSH available, flashing and crystallisation checks. Water, ammonia, urea solution and melt, carbamate.</p><span class="std">IAPWS-IF97 · Crane TP-410</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c3-6 5 4 8-2s5 4 8-2"/><path d="M4 9h3M17 19h3"/></svg></span><span class="k">B</span>Gas &amp; steam</h3><p>Compressible flow marched along the line with acceleration, Mach number, ρv² and ΔP by pressure band. Steam, CO₂, NH₃ vapour, syngas, natural gas, air and custom mixtures.</p><span class="std">IF97 · Peng–Robinson</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="10" r="2"/><circle cx="15" cy="16" r="1.5"/></svg></span><span class="k">C</span>Two-phase</h3><p>Erosional velocity with your C-factor, slugging minimum, homogeneous and Lockhart–Martinelli pressure drop for flashing condensate and ammonia letdown.</p><span class="std">API RP 14E</span></article>
+    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c3-6 5 4 8-2s5 4 8-2"/><path d="M4 9h3M17 19h3"/></svg></span><span class="k">B</span>Gas &amp; steam</h3><p>Compressible flow marched along the line with acceleration, Mach number, ρv², ΔP by pressure band and an optional API RP 14E erosional velocity check. Steam, CO₂, NH₃ vapour, syngas, natural gas, air and custom mixtures.</p><span class="std">IF97 · Peng–Robinson</span></article>
+    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="10" r="2"/><circle cx="15" cy="16" r="1.5"/></svg></span><span class="k">C</span>Two-phase</h3><p>Erosional velocity with your C-factor, Mandhane flow regime map that flags slug flow, homogeneous and Lockhart–Martinelli pressure drop for flashing condensate and ammonia letdown.</p><span class="std">API RP 14E · Mandhane map</span></article>
     <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M3 12h18"/></svg></span><span class="k">D</span>Wall thickness</h3><p>Pressure design thickness, corrosion allowance and mill tolerance, with the minimum schedule and its MAWP. Editable allowable-stress table.</p><span class="std">ASME B31.3 §304.1.2</span></article>
     <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8 5-8 5zM20 7l-8 5 8 5z"/><path d="M12 12V4M9 4h6"/></svg></span><span class="k">E</span>Quick Cv check</h3><p>A quick required-Cv and travel check on the line being sized, with choked-flow and cavitation flags, so the line and its valve are screened together.</p><span class="std">IEC 60534-2-1</span></article>
     <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M8 9h8l-2 6h-4z"/><path d="M12 15v6"/></svg></span><span class="k">F</span>Relief lines</h3><p>PSV inlet loss against the 3 % rule, built-up and total back pressure by valve type, tail-pipe exit Mach and choking.</p><span class="std">API 520 Part II · API 521</span></article>
+    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="8"/><path d="M12 2v2M12 20v2"/></svg></span><span class="k">G</span>Heat loss &amp; insulation</h3><p>Heat loss per metre, surface temperature, condensate rate and annual energy for steam and hot lines; heat gain and sweating check for cold ammonia and chilled lines, with the minimum insulation thickness.</p><span class="std">ASTM C680 · ISO 12241</span></article>
+    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="k">H</span>Line list &amp; reports</h3><p>Every sized line goes into one project line list with its verdict. Export it to Excel or to an A3 PDF with a title block, plus a calculation sheet for each line.</p><span class="std">Excel · PDF · document control</span></article>
   </div>
-  <p class="sub" style="margin-top:20px">Plus an itemised fittings editor (elbows, tees, valves, reducers and expanders at any size), °C/°F and m/ft units, ASME B36.10M or EN 10220 pipe, Excel line lists, calculation sheets and bulk import pasted from Excel.</p>
+  <p class="sub" style="margin-top:20px">Plus an itemised fittings editor (elbows, tees, valves, reducers and expanders at any size), °C/°F and m/ft units, ASME B36.10M or EN 10220 pipe, Excel and PDF line lists, calculation sheets and bulk import pasted from Excel.</p>
 </div></section>
 
 <section class="s alt" id="gallery"><div class="w">
@@ -349,7 +353,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
   <ol class="steps">
     <li class="rv"><b>Pick the service and fluid</b><span>The sizing criteria for pump suction, discharge, cooling water, steam or relief lines load automatically, and fluid properties are calculated for you.</span></li>
     <li class="rv"><b>Enter flow, pressure and route</b><span>Use kg/h, t/h, lb/h, m³/h, USGPM, Nm³/h or MMSCFD. Add fittings by type and size, or use a quick percentage allowance.</span></li>
-    <li class="rv"><b>Iterate with ▶ until it turns green</b><span>Coloured gauges show how much of each limit is used. Add the line to the line list, then export the calculation sheet and Excel line list.</span></li>
+    <li class="rv"><b>Iterate with ▶ until it turns green</b><span>Coloured gauges show how much of each limit is used. Add the line to the line list, then export the calculation sheet and the Excel or PDF line list.</span></li>
   </ol>
 </div></section>
 
@@ -384,7 +388,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 
 <section class="s alt" id="validation"><div class="w">
   <h2>How it was validated</h2>
-  <p class="sub">The calculator carries its own self-test: 37 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab.</p>
+  <p class="sub">The calculator carries its own self-test: 90 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab.</p>
   <div class="val">
     <table>
       <thead><tr><th>Module</th><th class="n">Graded checks</th><th class="n">Largest deviation</th></tr></thead>
@@ -395,6 +399,9 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
         <tr><td>Gases</td><td class="n">46</td><td class="n dev">5.16 %*</td></tr>
         <tr><td>Two-phase</td><td class="n">12</td><td class="n ok">2.72 %</td></tr>
         <tr><td>Wall thickness</td><td class="n">16</td><td class="n ok">0.00 %</td></tr>
+        <tr><td>Flow regime (Mandhane map)</td><td class="n">30</td><td class="n ok">0.00 %</td></tr>
+        <tr><td>Heat loss &amp; insulation</td><td class="n">20</td><td class="n ok">0.35 %</td></tr>
+        <tr><td>RP 14E &amp; properties</td><td class="n">13</td><td class="n ok">0.89 %</td></tr>
         <tr><td>Control valves</td><td class="n">6</td><td class="n ok">0.89 %</td></tr>
       </tbody>
     </table>
@@ -404,6 +411,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
         <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air, methanol, argon) — the same basis as NIST REFPROP; its multi-fluid mixture model for flue gas and reformed gas; and the Melinder model for ethylene glycol brine</li>
         <li>The <i>fluids</i> engineering library: exact Colebrook solution, Crane TP-410 fittings, isothermal compressible flow, IEC 60534 valve sizing</li>
         <li>Independent hand calculations for API RP 14E, Lockhart–Martinelli and ASME B31.3</li>
+        <li>The <i>fluids</i> Mandhane–Gregory–Aziz flow-pattern map, and an independent heat-loss solver built on the <i>ht</i> library (Churchill–Chu, Churchill–Bernstein and radiation, per ASTM C680 / ISO 12241)</li>
       </ul>
       <p style="color:var(--muted);font-size:14px">* One documented deviation: ammonia-vapour viscosity near saturation reads 5.2 % high against a 5 % tolerance; its effect on pressure drop is about 1 %.</p>
     </div>
