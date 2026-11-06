@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Line Sizing Manager — line sizing calculator for process plants">
-<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 130 of 131 validation checks pass against reference data.">
+<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 157 of 158 validation checks pass against reference data.">
 <meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/">
 <meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
  {"@type":"Question","name":"Is Line Sizing Manager free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The web edition is free and needs no sign-up. It runs entirely in your browser."}},
  {"@type":"Question","name":"Which standards and methods does it use?","acceptedAnswer":{"@type":"Answer","text":"Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water properties, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness."}},
- {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 31 reference cases. 130 of 131 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
+ {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 37 reference cases. 157 of 158 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
  {"@type":"Question","name":"Is my data stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing you enter leaves your device. The page makes no network requests while you work, and saved lines stay in your own browser."}},
  {"@type":"Question","name":"Can I use the results for design?","acceptedAnswer":{"@type":"Answer","text":"Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specifications and applicable codes before design, procurement or construction."}}]}
 </script>
@@ -198,7 +198,7 @@ h2::after{content:"";display:block;width:44px;height:4px;border-radius:2px;margi
 .marq{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:14px 0}
 .mq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .mqi{display:flex;gap:12px;width:max-content;animation:mq 45s linear infinite}.mqi span{font:600 13px var(--font-mono);color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:6px 14px;white-space:nowrap}@keyframes mq{to{transform:translateX(-50%)}}
-.fl{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:20px}.fc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 10px;text-align:center}.fc b{display:block;font:700 15px var(--font-mono);color:var(--accent)}.fc span{font-size:12.5px;color:var(--muted)}
+.fl{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:20px}.fc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 10px;text-align:center;position:relative}.fc.new::after{content:"NEW";position:absolute;top:6px;right:6px;font:700 9px var(--font-mono);letter-spacing:.08em;color:#fff;background:var(--accent);border-radius:4px;padding:1px 4px}.fc b{display:block;font:700 15px var(--font-mono);color:var(--accent)}.fc span{font-size:12.5px;color:var(--muted)}
 .members{--mg:#d4a84b;background:radial-gradient(900px 420px at 90% 0%,rgba(212,168,75,.18),transparent 60%),radial-gradient(800px 460px at 0% 100%,rgba(99,102,241,.28),transparent 65%),#17123a;color:#efeaff;padding:84px 0;border-top:4px solid var(--mg);border-bottom:4px solid var(--mg);margin-top:0;position:relative;overflow:hidden}
 .members::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(232,200,122,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(232,200,122,.05) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
 .members .w{position:relative}.mtag{display:inline-flex;align-items:center;gap:8px;font:700 12px var(--font-mono);letter-spacing:.12em;color:#1b1336;background:linear-gradient(135deg,#c9973a,#e8c87a);border-radius:999px;padding:6px 14px}
@@ -247,8 +247,8 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
   <div class="dh rv"><span class="eye2">LIVE ENGINEERING DASHBOARD</span><h2>What a sizing run looks like</h2><p class="sub">A real case from the calculator: cooling water at 100 m³/h on pump discharge, NPS 2 to 8, Schedule 40 carbon steel. Every number below comes from the same engine you use.</p></div>
   <div class="kpis">
     <div class="kpi rv"><span class="kl">Calculation modules</span><b class="cnt" data-to="7">0</b><span class="ks">liquid · gas · two-phase · wall · Cv · PSV · fittings</span></div>
-    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="130">0</span><small> / 131</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
-    <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="14">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
+    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="157">0</span><small> / 158</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
+    <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="20">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
     <div class="kpi rv"><span class="kl">Crane fittings &amp; valves</span><b class="cnt" data-to="26">0</b><span class="ks">K = n·fT with reducers &amp; expanders</span></div>
   </div>
   <div class="dgrid">
@@ -341,7 +341,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 
 <section class="marq" aria-label="Standards and methods"><div class="mq"><div class="mqi"><span>API 520 Part II</span><span>API 521</span><span>API RP 14E</span><span>ASME B31.3</span><span>ASME B36.10M</span><span>ASME B36.19M</span><span>EN 10220</span><span>Crane TP-410</span><span>IAPWS-IF97</span><span>IAPWS 2008</span><span>IEC 60534-2-1</span><span>Peng–Robinson</span><span>DIPPR 101/105</span><span>Colebrook–White</span><span>Lockhart–Martinelli</span><span>Thomson–Brobst–Hankinson</span><span>API 520 Part II</span><span>API 521</span><span>API RP 14E</span><span>ASME B31.3</span><span>ASME B36.10M</span><span>ASME B36.19M</span><span>EN 10220</span><span>Crane TP-410</span><span>IAPWS-IF97</span><span>IAPWS 2008</span><span>IEC 60534-2-1</span><span>Peng–Robinson</span><span>DIPPR 101/105</span><span>Colebrook–White</span><span>Lockhart–Martinelli</span><span>Thomson–Brobst–Hankinson</span></div></div></section>
 
-<section class="s" id="fluids"><div class="w"><h2 class="rv">Fluids built in</h2><p class="sub rv">Properties are calculated from temperature and pressure for every case, with an override for your simulation data.</p><div class="fl"><div class="fc rv" style="--d:0.00s"><b>H₂O</b><span>Water / BFW</span></div><div class="fc rv" style="--d:0.04s"><b>H₂O</b><span>Steam IF97</span></div><div class="fc rv" style="--d:0.08s"><b>NH₃</b><span>Liquid ammonia</span></div><div class="fc rv" style="--d:0.12s"><b>NH₃</b><span>Ammonia vapour</span></div><div class="fc rv" style="--d:0.16s"><b>CO(NH₂)₂</b><span>Urea solution</span></div><div class="fc rv" style="--d:0.20s"><b>CO(NH₂)₂</b><span>Urea melt</span></div><div class="fc rv" style="--d:0.24s"><b>NH₂COONH₄</b><span>Carbamate</span></div><div class="fc rv" style="--d:0.28s"><b>CO₂</b><span>Carbon dioxide</span></div><div class="fc rv" style="--d:0.32s"><b>H₂</b><span>Hydrogen</span></div><div class="fc rv" style="--d:0.36s"><b>N₂</b><span>Nitrogen</span></div><div class="fc rv" style="--d:0.40s"><b>O₂</b><span>Oxygen</span></div><div class="fc rv" style="--d:0.44s"><b>Air</b><span>Air</span></div><div class="fc rv" style="--d:0.48s"><b>CH₄</b><span>Natural gas</span></div><div class="fc rv" style="--d:0.52s"><b>3H₂+N₂</b><span>Synthesis gas</span></div></div></div></section>
+<section class="s" id="fluids"><div class="w"><h2 class="rv">Fluids built in</h2><p class="sub rv">Properties are calculated from temperature and pressure for every case, with an override for your simulation data.</p><div class="fl"><div class="fc rv" style="--d:0.00s"><b>H₂O</b><span>Water / BFW</span></div><div class="fc rv" style="--d:0.04s"><b>H₂O</b><span>Steam IF97</span></div><div class="fc rv" style="--d:0.08s"><b>NH₃</b><span>Liquid ammonia</span></div><div class="fc rv" style="--d:0.12s"><b>NH₃</b><span>Ammonia vapour</span></div><div class="fc rv" style="--d:0.16s"><b>CO(NH₂)₂</b><span>Urea solution</span></div><div class="fc rv" style="--d:0.20s"><b>CO(NH₂)₂</b><span>Urea melt</span></div><div class="fc rv" style="--d:0.24s"><b>NH₂COONH₄</b><span>Carbamate</span></div><div class="fc rv" style="--d:0.28s"><b>CO₂</b><span>Carbon dioxide</span></div><div class="fc rv" style="--d:0.32s"><b>H₂</b><span>Hydrogen</span></div><div class="fc rv" style="--d:0.36s"><b>N₂</b><span>Nitrogen</span></div><div class="fc rv" style="--d:0.40s"><b>O₂</b><span>Oxygen</span></div><div class="fc rv" style="--d:0.44s"><b>Air</b><span>Air</span></div><div class="fc rv" style="--d:0.48s"><b>CH₄</b><span>Natural gas</span></div><div class="fc rv" style="--d:0.52s"><b>3H₂+N₂</b><span>Synthesis gas</span></div><div class="fc rv new" style="--d:0.56s"><b>CH₃OH</b><span>Methanol</span></div><div class="fc rv new" style="--d:0.60s"><b>MEG-50</b><span>Glycol brine 50 %</span></div><div class="fc rv new" style="--d:0.64s"><b>Ar</b><span>Argon</span></div><div class="fc rv new" style="--d:0.68s"><b>CO</b><span>Carbon monoxide</span></div><div class="fc rv new" style="--d:0.72s"><b>N₂·CO₂·H₂O</b><span>Flue gas</span></div><div class="fc rv new" style="--d:0.76s"><b>H₂·CO·H₂O</b><span>Reformed gas</span></div></div></div></section>
 
 <section class="s alt"><div class="w">
   <h2>How it works</h2>
@@ -384,15 +384,15 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 
 <section class="s alt" id="validation"><div class="w">
   <h2>How it was validated</h2>
-  <p class="sub">The calculator carries its own self-test: 31 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab.</p>
+  <p class="sub">The calculator carries its own self-test: 37 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab.</p>
   <div class="val">
     <table>
       <thead><tr><th>Module</th><th class="n">Graded checks</th><th class="n">Largest deviation</th></tr></thead>
       <tbody>
-        <tr><td>Liquid properties &amp; hydraulics</td><td class="n">49</td><td class="n ok">0.95 %</td></tr>
+        <tr><td>Liquid properties &amp; hydraulics</td><td class="n">59</td><td class="n ok">0.95 %</td></tr>
         <tr><td>Fittings (Crane K)</td><td class="n">4</td><td class="n ok">0.94 %</td></tr>
         <tr><td>Steam</td><td class="n">15</td><td class="n ok">0.12 %</td></tr>
-        <tr><td>Gases</td><td class="n">29</td><td class="n dev">5.16 %*</td></tr>
+        <tr><td>Gases</td><td class="n">46</td><td class="n dev">5.16 %*</td></tr>
         <tr><td>Two-phase</td><td class="n">12</td><td class="n ok">2.72 %</td></tr>
         <tr><td>Wall thickness</td><td class="n">16</td><td class="n ok">0.00 %</td></tr>
         <tr><td>Control valves</td><td class="n">6</td><td class="n ok">0.89 %</td></tr>
@@ -401,7 +401,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
     <div>
       <p style="margin-top:0">References used:</p>
       <ul class="refs">
-        <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air) — the same basis as NIST REFPROP</li>
+        <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air, methanol, argon) — the same basis as NIST REFPROP; its multi-fluid mixture model for flue gas and reformed gas; and the Melinder model for ethylene glycol brine</li>
         <li>The <i>fluids</i> engineering library: exact Colebrook solution, Crane TP-410 fittings, isothermal compressible flow, IEC 60534 valve sizing</li>
         <li>Independent hand calculations for API RP 14E, Lockhart–Martinelli and ASME B31.3</li>
       </ul>
