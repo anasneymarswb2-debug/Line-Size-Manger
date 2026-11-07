@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two-phase line sizing: erosional velocity and flow regimes — Line Sizing Manager</title>
+<meta name="description" content="Size gas–liquid lines with the API RP 14E erosional velocity, a minimum velocity against slugging, Lockhart–Martinelli pressure drop and the Mandhane flow-pattern map, with a flashing condensate example.">
+<link rel="canonical" href="https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/two-phase-line-sizing/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta name="referrer" content="no-referrer">
+<script>if(window.top!==window.self){try{window.top.location.replace(window.self.location.href)}catch(e){document.documentElement.style.display="none"}}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta property="og:title" content="Two-phase line sizing: erosional velocity and flow regimes"><meta property="og:description" content="Size gas–liquid lines with the API RP 14E erosional velocity, a minimum velocity against slugging, Lockhart–Martinelli pressure drop and the Mandhane flow-pattern map, with a flashing condensate example."><meta property="og:type" content="article"><meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/two-phase-line-sizing/"><meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
+<link rel="stylesheet" href="../../fonts/fonts.css"><link rel="stylesheet" href="../../assets/pages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Two-phase line sizing: erosional velocity and flow regimes", "description": "Size gas–liquid lines with the API RP 14E erosional velocity, a minimum velocity against slugging, Lockhart–Martinelli pressure drop and the Mandhane flow-pattern map, with a flashing condensate example.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "author": {"@type": "Person", "name": "Muhammad Anas", "url": "https://www.linkedin.com/in/muhammad-anas-a630a1227"}, "mainEntityOfPage": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/two-phase-line-sizing/", "isPartOf": {"@type": "WebSite", "name": "Line Sizing Manager", "url": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/"}, {"@type": "ListItem", "position": 3, "name": "Two-phase line sizing: erosional velocity and flow regimes", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/two-phase-line-sizing/"}]}</script>
+</head>
+<body>
+<header class="top"><div class="w"><a class="brand" href="../../">Line Sizing Manager</a><nav><a href="../../app/">Calculator</a><a href="../../guides/" aria-current="page">Guides</a><a href="../../validation/">Validation</a><a href="../../">Home</a></nav><a class="cta" href="../../app/">Open the calculator →</a></div></header>
+<main class="w">
+<div class="hero"><div class="crumbs"><a href="../../">Home</a> › <a href="../">Guides</a> › Two-phase line sizing: erosional velocity and flow regimes</div><h1>Two-phase line sizing: erosional velocity and flow regimes</h1><p class="lead">Size gas–liquid lines with the API RP 14E erosional velocity, a minimum velocity against slugging, Lockhart–Martinelli pressure drop and the Mandhane flow-pattern map, with a flashing condensate example.</p>
+<div class="meta">By <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Muhammad Anas</a>, process design engineer · updated 2026-11-07 · version 2026.11.7</div></div>
+
+<article>
+<h2>Why two-phase lines are different</h2>
+<p>A line carrying both liquid and vapour has two failure modes pulling in opposite directions. Too <b>fast</b> and the liquid droplets erode bends and tees. Too <b>slow</b> and the phases separate, liquid collects in low points and the flow arrives as slugs that hammer bends and supports. Condensate return lines and flashing letdown lines in every steam and ammonia plant live between these two limits.</p>
+<h2>Method</h2>
+<div class="eq">ρ<sub>m</sub> = 1 / ( x/ρ<sub>G</sub> + (1−x)/ρ<sub>L</sub> ) &nbsp;&nbsp; (homogeneous, no-slip mixture)<br>v<sub>e</sub> = C / √ρ<sub>m</sub> in ft/s with ρ in lb/ft³ (API RP 14E) &nbsp;→&nbsp; v<sub>e</sub> = 1.22 · C / √ρ<sub>m</sub> in m/s with ρ in kg/m³</div>
+<p>The constant 1.22 is just the unit conversion (0.3048 / √0.062428). The C-factor is 100 for continuous service in carbon steel and up to 150–200 for clean, non-corrosive service. RP 14E also suggests a minimum mixture velocity of about 3–4.5 m/s to limit slugging. The pressure gradient is taken as the larger of the homogeneous model and Lockhart–Martinelli.</p>
+<p>Velocity limits alone do not tell you the <b>flow pattern</b>. The Mandhane–Gregory–Aziz map plots superficial gas velocity against superficial liquid velocity for horizontal pipe and shows whether the flow is stratified, wavy, slug, annular or dispersed. Slug and elongated-bubble flow are the ones to avoid in long horizontal runs.</p>
+<h2>Worked example: flashing condensate</h2>
+<p><b>Duty:</b> saturated water and steam at 3 barg (143.7 °C), 9 500 kg/h liquid and 500 kg/h flash vapour, plus a 10 % margin. Properties: ρ<sub>L</sub> = 922.8 kg/m³, ρ<sub>G</sub> = 2.169 kg/m³. C = 100.</p>
+<div class="eq">x = 500 / 10 000 = 5 % &nbsp;·&nbsp; ρ<sub>m</sub> = 1 / (0.05/2.169 + 0.95/922.8) = 41.5 kg/m³<br>v<sub>e</sub> = 1.22 × 100 / √41.5 = 18.9 m/s</div>
+<p>Note how the 5 % of vapour by mass takes up 96 % of the volume: the liquid volume fraction is only 4.3 %.</p>
+<table><thead><tr><th>Size</th><th>Mixture velocity</th><th>Gradient, bar/100 m</th><th>Flow pattern</th><th>Verdict</th></tr></thead><tbody><tr><td>3"</td><td class="n">15.4 m/s</td><td class="n">1.18</td><td>slug</td><td><span class="fail">gradient too high</span></td></tr><tr><td>4"</td><td class="n">9.0 m/s</td><td class="n">0.30</td><td>slug</td><td><span class="pass">smallest that passes</span></td></tr><tr><td>6"</td><td class="n">3.9 m/s</td><td class="n">0.04</td><td>slug</td><td><span class="warn">passes, slug warning</span></td></tr><tr><td>8"</td><td class="n">2.3 m/s</td><td class="n">0.01</td><td>stratified</td><td><span class="fail">below 3 m/s, oversized</span></td></tr></tbody></table>
+<p>Every size from 4 to 6 inch passes the erosional (18.9 m/s) and minimum (3 m/s) velocity checks, but the Mandhane map places all of them in <b>slug flow</b>. Going bigger only reaches stratified flow at 8 inch, where the velocity has dropped below the slugging minimum. So the practical answer is a 4 or 6 inch line that is short, self-draining, has no pockets, and is supported for slug loads at bends; or flash the condensate in a vessel close to the source so that vapour and liquid travel in separate lines.</p>
+<h2>Common mistakes</h2>
+<ul><li>Using the liquid density in the erosional velocity formula. It must be the mixture density.</li>
+<li>Treating "below the erosional velocity" as "acceptable". Slow two-phase lines slug.</li>
+<li>Forgetting that more vapour flashes as the pressure falls along the line, so the outlet end is the worst case.</li></ul>
+<div class="box try"><b>Try it yourself.</b> Open the Two-phase tab, load <i>Flashing condensate</i> and look at the flow-pattern map as you change the size.<br><a class="btn" href="../../app/#twophase">Size a two-phase line →</a></div>
+</article>
+</main>
+<footer><div class="w">© 2026 Muhammad Anas · Line Sizing Manager, version 2026.11.7 · <a href="../../">Home</a> · <a href="../../app/">Calculator</a> · <a href="../../guides/">Guides</a> · <a href="../../validation/">Validation report</a> · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback on LinkedIn</a><br>
+How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.7. https://anasneymarswb2-debug.github.io/Line-Size-Manger/ · Results are for learning and preliminary engineering; verify against your project specification.</div></footer>
+</body>
+</html>

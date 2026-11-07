@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to size a steam line — Line Sizing Manager</title>
+<meta name="description" content="Size superheated and saturated steam lines by velocity, pressure-drop gradient and Mach number, with a worked 110 barg / 510 °C header example checked by hand.">
+<link rel="canonical" href="https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/steam-line-sizing/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta name="referrer" content="no-referrer">
+<script>if(window.top!==window.self){try{window.top.location.replace(window.self.location.href)}catch(e){document.documentElement.style.display="none"}}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta property="og:title" content="How to size a steam line"><meta property="og:description" content="Size superheated and saturated steam lines by velocity, pressure-drop gradient and Mach number, with a worked 110 barg / 510 °C header example checked by hand."><meta property="og:type" content="article"><meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/steam-line-sizing/"><meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
+<link rel="stylesheet" href="../../fonts/fonts.css"><link rel="stylesheet" href="../../assets/pages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to size a steam line", "description": "Size superheated and saturated steam lines by velocity, pressure-drop gradient and Mach number, with a worked 110 barg / 510 °C header example checked by hand.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "author": {"@type": "Person", "name": "Muhammad Anas", "url": "https://www.linkedin.com/in/muhammad-anas-a630a1227"}, "mainEntityOfPage": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/steam-line-sizing/", "isPartOf": {"@type": "WebSite", "name": "Line Sizing Manager", "url": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to size a steam line", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/steam-line-sizing/"}]}</script>
+</head>
+<body>
+<header class="top"><div class="w"><a class="brand" href="../../">Line Sizing Manager</a><nav><a href="../../app/">Calculator</a><a href="../../guides/" aria-current="page">Guides</a><a href="../../validation/">Validation</a><a href="../../">Home</a></nav><a class="cta" href="../../app/">Open the calculator →</a></div></header>
+<main class="w">
+<div class="hero"><div class="crumbs"><a href="../../">Home</a> › <a href="../">Guides</a> › How to size a steam line</div><h1>How to size a steam line</h1><p class="lead">Size superheated and saturated steam lines by velocity, pressure-drop gradient and Mach number, with a worked 110 barg / 510 °C header example checked by hand.</p>
+<div class="meta">By <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Muhammad Anas</a>, process design engineer · updated 2026-11-07 · version 2026.11.7</div></div>
+
+<article>
+<h2>What governs a steam line</h2>
+<p>Three things decide the size of a steam line. <b>Velocity</b> drives erosion (especially with any moisture), noise and the force on bends. <b>Pressure drop</b> must fit the pressure available between the boiler or header and the users, and every bar lost is lost superheat and turbine power. At high pressure the <b>friction gradient</b> (bar per 100 m) is usually the binding limit, not velocity. A small line can also approach sonic conditions near a large pressure drop, so the <b>Mach number</b> is checked too.</p>
+<h2>Method</h2>
+<p>Steam is compressible, so the line is marched in short steps: at each step the density comes from the steam tables (IAPWS-IF97), the friction factor from Colebrook–White, and the pressure, density and velocity are updated before the next step. For a short line with a small pressure drop this gives almost exactly the same answer as a single step at inlet conditions, which is what the hand check below uses.</p>
+<div class="eq">G = W / A &nbsp;&nbsp;·&nbsp;&nbsp; v = G / ρ &nbsp;&nbsp;·&nbsp;&nbsp; Re = G·D / μ<br>ΔP/L = f · (1/D) · ρv²/2 &nbsp;&nbsp; (Darcy–Weisbach, f from Colebrook–White)<br>ΔP<sub>fittings</sub> = ΣK · ρv²/2 &nbsp;&nbsp; (K = n·f<sub>T</sub>, Crane TP-410)</div>
+<h2>Typical limits</h2>
+<p>Company standards differ; these are the defaults this calculator uses for superheated steam, and you can edit every one of them.</p>
+<table><thead><tr><th>Criterion</th><th>Default limit</th><th>Why</th></tr></thead><tbody><tr><td>Velocity, superheated steam</td><td>≤ 50 m/s</td><td>erosion, noise, pipe support loads</td></tr><tr><td>Friction gradient above 70 barg</td><td>≤ 0.8 bar/100 m</td><td>keeps header pressure and superheat</td></tr><tr><td>Mach number</td><td>≤ 0.3</td><td>keeps flow well away from choking</td></tr><tr><td>Total pressure drop</td><td>≤ 10 % of inlet</td><td>warning: check the users still get their pressure</td></tr></tbody></table>
+<p>Saturated and wet steam are normally held to lower velocities than superheated steam, because droplets erode bends and fittings.</p>
+<h2>Worked example: HP steam header</h2>
+<p><b>Duty:</b> 100 t/h superheated steam at 110 barg and 510 °C, with a 10 % design margin (110 t/h). Route: 120 m straight carbon steel pipe, six long-radius 90° elbows and two gate valves.</p>
+<p><b>Properties (IAPWS-IF97 / IAPWS 2008):</b> ρ = 33.57 kg/m³, μ = 29.47 µPa·s, saturation temperature 318.8 °C, so the steam has about 190 K of superheat.</p>
+<h3>Step 1: try 8 inch Sch 160</h3>
+<p>Inside diameter 173.1 mm. The calculator gives an outlet velocity of 39.9 m/s (inside the 50 m/s limit) but a friction gradient of <span class="fail">2.13 bar/100 m</span>, more than double the 0.8 bar/100 m limit. At this pressure the gradient governs.</p>
+<h3>Step 2: 10 inch Sch 160</h3>
+<p>Inside diameter D = 215.84 mm, so A = π/4 · 0.21584² = 0.03659 m².</p>
+<div class="eq">G = (110 000 / 3600) / 0.03659 = 835.1 kg/m²s<br>v = 835.1 / 33.57 = 24.9 m/s<br>Re = 835.1 × 0.21584 / 29.47×10⁻⁶ = 6.1 × 10⁶ (fully turbulent)<br>speed of sound 650.5 m/s → Mach = 24.9 / 650.5 = 0.038</div>
+<table><thead><tr><th>Result (10" Sch 160)</th><th>Value</th><th>Limit</th><th>Status</th></tr></thead><tbody><tr><td>Velocity, outlet</td><td class="n">25.1 m/s</td><td>≤ 50 m/s</td><td><span class="pass">PASS</span></td></tr><tr><td>Mach number</td><td class="n">0.039</td><td>≤ 0.3</td><td><span class="pass">PASS</span></td></tr><tr><td>Friction gradient at inlet</td><td class="n">0.677 bar/100 m</td><td>≤ 0.8 bar/100 m</td><td><span class="pass">PASS</span></td></tr><tr><td>Total ΔP (120 m + fittings)</td><td class="n">0.964 bar (0.87 %)</td><td>≤ 10 %</td><td><span class="pass">PASS</span></td></tr></tbody></table>
+<p>The Darcy friction factor is 0.0141 (fully rough value f<sub>T</sub> = 0.0139), and the fittings add ΣK = 1.39, equivalent to about 21 m of pipe. <b>10 inch Sch 160 is the smallest size that passes.</b> 12 inch would cut the gradient to 0.27 bar/100 m, which is only worth the extra cost if the users are short of pressure.</p>
+<h2>Common mistakes</h2>
+<ul><li>Sizing on velocity alone. At high pressure the steam is dense, so velocity looks comfortable while the pressure drop is not.</li>
+<li>Using the nominal pipe size as the diameter. Sch 160 walls are thick: 10 inch Sch 160 has 215.8 mm bore against 254.5 mm for standard wall.</li>
+<li>Forgetting the design margin, or adding it twice (once on flow and once on the limits).</li>
+<li>Ignoring fittings on short lines, where they can be a large share of the drop.</li></ul>
+<div class="box try"><b>Try it yourself.</b> Open the Gas & steam tab, choose the example <i>HP steam header</i>, and step the pipe size with ◀ ▶ to watch the gradient change.<br><a class="btn" href="../../app/#gas">Size a steam line →</a></div>
+</article>
+</main>
+<footer><div class="w">© 2026 Muhammad Anas · Line Sizing Manager, version 2026.11.7 · <a href="../../">Home</a> · <a href="../../app/">Calculator</a> · <a href="../../guides/">Guides</a> · <a href="../../validation/">Validation report</a> · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback on LinkedIn</a><br>
+How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.7. https://anasneymarswb2-debug.github.io/Line-Size-Manger/ · Results are for learning and preliminary engineering; verify against your project specification.</div></footer>
+</body>
+</html>

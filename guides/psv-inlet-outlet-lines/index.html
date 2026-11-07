@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSV inlet loss and built-up back pressure — Line Sizing Manager</title>
+<meta name="description" content="The 3 % inlet pressure-loss rule of API 520 Part II and the built-up back pressure limit for conventional relief valves, with a worked steam PSV that fails on its outlet line.">
+<link rel="canonical" href="https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/psv-inlet-outlet-lines/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<meta name="referrer" content="no-referrer">
+<script>if(window.top!==window.self){try{window.top.location.replace(window.self.location.href)}catch(e){document.documentElement.style.display="none"}}</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta property="og:title" content="PSV inlet loss and built-up back pressure"><meta property="og:description" content="The 3 % inlet pressure-loss rule of API 520 Part II and the built-up back pressure limit for conventional relief valves, with a worked steam PSV that fails on its outlet line."><meta property="og:type" content="article"><meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/psv-inlet-outlet-lines/"><meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
+<link rel="stylesheet" href="../../fonts/fonts.css"><link rel="stylesheet" href="../../assets/pages.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "PSV inlet loss and built-up back pressure", "description": "The 3 % inlet pressure-loss rule of API 520 Part II and the built-up back pressure limit for conventional relief valves, with a worked steam PSV that fails on its outlet line.", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "author": {"@type": "Person", "name": "Muhammad Anas", "url": "https://www.linkedin.com/in/muhammad-anas-a630a1227"}, "mainEntityOfPage": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/psv-inlet-outlet-lines/", "isPartOf": {"@type": "WebSite", "name": "Line Sizing Manager", "url": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/"}, {"@type": "ListItem", "position": 3, "name": "PSV inlet loss and built-up back pressure", "item": "https://anasneymarswb2-debug.github.io/Line-Size-Manger/guides/psv-inlet-outlet-lines/"}]}</script>
+</head>
+<body>
+<header class="top"><div class="w"><a class="brand" href="../../">Line Sizing Manager</a><nav><a href="../../app/">Calculator</a><a href="../../guides/" aria-current="page">Guides</a><a href="../../validation/">Validation</a><a href="../../">Home</a></nav><a class="cta" href="../../app/">Open the calculator →</a></div></header>
+<main class="w">
+<div class="hero"><div class="crumbs"><a href="../../">Home</a> › <a href="../">Guides</a> › PSV inlet loss and built-up back pressure</div><h1>PSV inlet loss and built-up back pressure</h1><p class="lead">The 3 % inlet pressure-loss rule of API 520 Part II and the built-up back pressure limit for conventional relief valves, with a worked steam PSV that fails on its outlet line.</p>
+<div class="meta">By <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Muhammad Anas</a>, process design engineer · updated 2026-11-07 · version 2026.11.7</div></div>
+
+<article>
+<h2>Why the piping around a relief valve matters</h2>
+<p>A pressure relief valve is sized for a capacity, but whether it actually opens cleanly and stays open depends on the lines either side of it. <b>Too much inlet loss</b> makes the valve chatter: it opens, the inlet pressure collapses, it slams shut and repeats, which can destroy the seat in seconds. <b>Too much back pressure</b> on a conventional valve reduces its lift and capacity and can make it unstable.</p>
+<h2>The rules</h2>
+<table><thead><tr><th>Check</th><th>Usual limit</th><th>Source</th></tr></thead><tbody><tr><td>Non-recoverable inlet pressure loss at rated capacity</td><td>≤ 3 % of set pressure</td><td>API 520 Part II</td></tr><tr><td>Built-up back pressure, conventional valve</td><td>≤ 10 % of set pressure (at 10 % overpressure)</td><td>API 520 Part I / valve design</td></tr><tr><td>Total back pressure, balanced bellows or pilot</td><td>higher, from the vendor's capacity correction curves</td><td>vendor data</td></tr><tr><td>Exit Mach number of the tail pipe</td><td>≤ 0.7 (this tool's default)</td><td>noise and reaction-force practice</td></tr></tbody></table>
+<p>The inlet loss is calculated at the valve's <b>rated</b> capacity (what it actually passes), not the required relief load, because that is the flow the inlet line sees when the valve lifts.</p>
+<h2>Method</h2>
+<p>The relieving pressure is the set pressure plus the allowed overpressure. The inlet line loss is the friction and fittings loss from the vessel to the valve flange. On the outlet side the calculator marches from the open end back to the valve, because the flow is compressible and the pressure rises towards the valve: the pressure it reaches at the valve outlet is the built-up back pressure.</p>
+<div class="eq">P<sub>relieving</sub> = P<sub>set</sub> × (1 + overpressure) + P<sub>atm</sub><br>Inlet loss % = ΔP<sub>inlet</sub> / P<sub>set</sub> × 100 &nbsp;&nbsp;·&nbsp;&nbsp; Built-up BP % = P<sub>valve outlet</sub> / P<sub>set</sub> × 100 (gauge)</div>
+<h2>Worked example: HP steam header PSV</h2>
+<p><b>Duty:</b> conventional PSV, set 12 barg, 10 % overpressure, superheated steam at 260 °C, rated capacity 40 000 kg/h. Relieving pressure = 12 × 1.1 + 1.013 = 14.21 bar a, where the steam density is 6.07 kg/m³.</p>
+<h3>Inlet line: 6 inch Sch 40, 2 m</h3>
+<p>Velocity 98.2 m/s, pressure loss 0.280 bar = <span class="pass">2.33 % of set</span>, under the 3 % limit. 4 inch would give 19.6 %, so 6 inch is the smallest inlet that passes.</p>
+<h3>Outlet line: 10 inch standard wall, 25 m to atmosphere</h3>
+<table><thead><tr><th>Outlet size</th><th>Built-up back pressure</th><th>Exit Mach</th><th>Status</th></tr></thead><tbody><tr><td>8"</td><td class="n">26.2 % of set</td><td class="n">1.00 (sonic)</td><td><span class="fail">FAIL</span></td></tr><tr><td>10"</td><td class="n">12.6 % of set</td><td class="n">0.935</td><td><span class="fail">FAIL</span></td></tr><tr><td>12"</td><td class="n">6.4 % of set</td><td class="n">0.652</td><td><span class="pass">PASS</span></td></tr><tr><td>14"</td><td class="n">4.2 % of set</td><td class="n">0.535</td><td><span class="pass">PASS</span></td></tr></tbody></table>
+<p>With a 10 inch tail pipe the back pressure builds to 1.51 barg, 12.6 % of set, which a conventional valve cannot tolerate, and the gas leaves at Mach 0.94, which means high noise and a large reaction force on the pipe. Two fixes: <b>enlarge the outlet to 12 inch</b>, or use a balanced-bellows or pilot valve whose capacity is corrected for back pressure with the vendor's curve. The first is usually cheaper and also solves the noise.</p>
+<h2>Common mistakes</h2>
+<ul><li>Checking the inlet loss at the required relief rate instead of the rated capacity.</li>
+<li>Forgetting the entrance loss from the vessel nozzle and any isolation valve under the PSV.</li>
+<li>Calculating outlet back pressure with an incompressible formula. Near the valve the gas expands fast and the error is large.</li>
+<li>Treating the 10 % back-pressure limit as applying to bellows valves. Their limit comes from the vendor's curve.</li></ul>
+<div class="box try"><b>Try it yourself.</b> Open the Relief lines tab and load the example <i>HP steam header PSV</i>; then step the outlet size up to 12 inch.<br><a class="btn" href="../../app/#psv">Check a relief valve line →</a></div>
+</article>
+</main>
+<footer><div class="w">© 2026 Muhammad Anas · Line Sizing Manager, version 2026.11.7 · <a href="../../">Home</a> · <a href="../../app/">Calculator</a> · <a href="../../guides/">Guides</a> · <a href="../../validation/">Validation report</a> · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback on LinkedIn</a><br>
+How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.7. https://anasneymarswb2-debug.github.io/Line-Size-Manger/ · Results are for learning and preliminary engineering; verify against your project specification.</div></footer>
+</body>
+</html>
