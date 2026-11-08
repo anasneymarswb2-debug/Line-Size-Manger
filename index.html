@@ -23,7 +23,7 @@
  "author":{"@type":"Person","name":"Muhammad Anas","jobTitle":"Process Design Engineer","sameAs":["https://www.linkedin.com/in/muhammad-anas-a630a1227"]},
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
  "description":"Line sizing calculator for process plants: liquid, gas and steam, two-phase (API RP 14E), control valve sizing (IEC 60534-2-1), PSV inlet and outlet lines (API 520 Part II / API 521) and ASME B31.3 pipe wall thickness, with Crane TP-410 fittings and EN 10220 / ASME B36.10M pipe tables.",
- "featureList":["Hydraulic network flowsheet with pumps, pipes, control valves and equipment, validated against EPANET","Liquid line sizing with NPSH available","Compressible gas and steam line sizing","Two-phase erosional velocity (API RP 14E)","Control valve sizing (IEC 60534-2-1)","PSV inlet loss and back pressure (API 520 Part II, API 521)","ASME B31.3 wall thickness","Crane TP-410 fittings with reducers and expanders","Excel and PDF line list and calculation sheets","Two-phase flow regime map (Mandhane) with slug flagging","Gas line erosional velocity check (API RP 14E)","Heat loss and insulation thickness check for hot and cold lines"]}
+ "featureList":["Members: process flowsheet with hydraulic networks (validated against EPANET) and steam/water heat and material balances (IAPWS-IF97)","Liquid line sizing with NPSH available","Compressible gas and steam line sizing","Two-phase erosional velocity (API RP 14E)","Control valve sizing (IEC 60534-2-1)","PSV inlet loss and back pressure (API 520 Part II, API 521)","ASME B31.3 wall thickness","Crane TP-410 fittings with reducers and expanders","Excel and PDF line list and calculation sheets","Two-phase flow regime map (Mandhane) with slug flagging","Gas line erosional velocity check (API RP 14E)","Heat loss and insulation thickness check for hot and cold lines"]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -236,7 +236,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
   <div class="w">
     <nav class="top" aria-label="Main">
       <a class="brand" href="./"><img src="favicon.svg" alt="" width="30" height="30">Line Sizing Manager</a>
-      <ul><li class="hide-s"><a href="#dashboard">Dashboard</a></li><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#gallery">Gallery</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="flowsheet/">Flowsheet</a></li><li class="hide-s"><a href="guides/">Guides</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li class="hide-s"><a href="#author">Author</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
+      <ul><li class="hide-s"><a href="#dashboard">Dashboard</a></li><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#gallery">Gallery</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="#flowsheet">Flowsheet</a></li><li class="hide-s"><a href="guides/">Guides</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li class="hide-s"><a href="#author">Author</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
     </nav>
     <div class="hero">
       <div>
@@ -317,11 +317,14 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 </div></section>
 
 <section class="s" id="flowsheet"><div class="w fsnew">
-  <div class="rv"><span class="tag">New · free</span><h2>Hydraulic flowsheet</h2>
-  <p class="sub" style="margin:0">Draw a whole liquid system (tanks, pumps, pipes, control valves, exchangers and branches or loops) and solve every flow and pressure at once, the way network software such as EPANET or AFT Fathom does.</p>
-  <ul><li>Pump curves, parallel pumps and check valves</li><li>Every pipe, pump and valve checked: velocity, gradient, NPSH, valve opening, cavitation and choking</li><li>Stream and node tables, Excel workbook and PDF report with the drawing</li><li>Solver validated against EPANET 2.2: 60 of 60 checks within 0.4 %</li></ul>
-  <a class="btn primary" href="flowsheet/">Open the flowsheet →</a></div>
-  <a class="rv" href="flowsheet/" aria-label="Open the hydraulic flowsheet"><img src="img/shot-flowsheet.jpg" alt="Flowsheet of a cooling-water system: pump, header, heat exchanger and valve branches, every line coloured by its check result" width="1400" height="643" loading="lazy"></a>
+  <div class="rv"><span class="tag">New · members</span><h2>Process flowsheet</h2>
+  <p class="sub" style="margin:0">Draw a plant system and solve it in one go, in the style of HYSYS: hydraulic networks the way EPANET or AFT Fathom do, and steam / water heat and material balances with turbines, heat exchangers, flash drums, desuperheaters and recycles.</p>
+  <ul><li><b>Hydraulic network:</b> pump curves, parallel pumps, control valves, check valves and loops; every pipe, pump and valve checked (velocity, NPSH, cavitation, choking). Validated against EPANET 2.2, 60 of 60 within 0.4 %</li>
+  <li><b>Heat &amp; material balance:</b> IAPWS-IF97 steam tables, 12 unit operations, automatic recycle convergence and a HYSYS-style stream workbook. Validated against the iapws IF97 implementation and independent balances, 80 of 80</li>
+  <li>Excel workbook and PDF report with the drawing</li></ul>
+  <p style="margin:0 0 16px;color:var(--muted)">Part of the members edition. Line Sizing Manager itself stays free.</p>
+  <a class="btn primary" href="flowsheet/">Members sign in →</a></div>
+  <a class="rv" href="flowsheet/" aria-label="Flowsheet, members sign in"><img src="img/shot-flowsheet.jpg" alt="Flowsheet of a cooling-water system: pump, header, heat exchanger and valve branches, every line coloured by its check result" width="1400" height="643" loading="lazy"></a>
 </div></section>
 <section class="s" id="modules"><div class="w">
   <h2>Eight modules, one workflow</h2>
@@ -481,7 +484,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
     </ul>
   </div>
   <figure class="mshot rv"><img src="img/shot-valve.jpg" width="1200" height="760" loading="lazy" alt="Control Valve Sizing Manager screen: valve size acceptable, opening gauges and size ladder"><figcaption>Members edition: verdict, opening at each case and the size ladder.</figcaption></figure>
-  <table class="cmp"><thead><tr><th>Feature</th><th class="c">Free tools</th><th class="c">Members</th></tr></thead><tbody><tr><td>Line, steam, two-phase and PSV line sizing, B31.3 wall, insulation</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Quick control valve Cv check (IEC 60534-2-1)</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Full IEC 60534-2-1 sizing at minimum, normal and maximum cases with piping factors</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>IEC 60534-8-3 / 8-4 noise prediction</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Cavitation, flashing (omega method) and trim stage count</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Installed characteristic from the pump and system curve</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Actuator thrust, ASME B16.34 rating and FCI 70-2 leakage</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Vendor Cv / FL / xT data versus travel</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Calculation report (PDF) with drawing and curves; Excel workbook with live formulas</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Valve list (instrument index) for a project</td><td class="nn">–</td><td class="y">✓</td></tr></tbody></table>
+  <table class="cmp"><thead><tr><th>Feature</th><th class="c">Free tools</th><th class="c">Members</th></tr></thead><tbody><tr><td>Line, steam, two-phase and PSV line sizing, B31.3 wall, insulation</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Quick control valve Cv check (IEC 60534-2-1)</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Full IEC 60534-2-1 sizing at minimum, normal and maximum cases with piping factors</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>IEC 60534-8-3 / 8-4 noise prediction</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Cavitation, flashing (omega method) and trim stage count</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Installed characteristic from the pump and system curve</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Actuator thrust, ASME B16.34 rating and FCI 70-2 leakage</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Vendor Cv / FL / xT data versus travel</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Calculation report (PDF) with drawing and curves; Excel workbook with live formulas</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Process flowsheet: hydraulic networks (pumps, valves, loops)</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Steam / water heat &amp; material balance with recycles (IAPWS-IF97)</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Valve list (instrument index) for a project</td><td class="nn">–</td><td class="y">✓</td></tr></tbody></table>
   <div class="mcta rv"><a class="mbtn" href="valve/">Members sign in →</a><a class="mlink" href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Request access on LinkedIn</a></div>
 </div></section>
 
@@ -491,7 +494,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
     <p>© 2026 Muhammad Anas · Line Sizing Manager. All rights reserved. The calculator is provided free for learning and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
     <h3 id="privacy">Privacy</h3>
     <p>This site uses no cookies, no analytics and no tracking. Everything you type stays on your device.</p>
-    <p class="fver">Version 2026.11.8 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.8. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
+    <p class="fver">Version 2026.11.8.2 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.8.2. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
   </div>
   <div>
     <h3>Line Sizing Manager</h3>
