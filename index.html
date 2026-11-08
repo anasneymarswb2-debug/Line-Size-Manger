@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-toacR8iP+t6BGVtv2YKYD2XN6t/DM71OTbXZvqd6fLQ=' 'sha256-s3504UP8O7m26ozegkcz1dQL03XYyTYyvjeQh71dXZ4='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src-attr 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Line Sizing Manager — line sizing calculator for process plants">
-<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 220 of 221 validation checks pass against reference data.">
+<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 318 of 318 validation checks pass against reference data.">
 <meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/">
 <meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
  {"@type":"Question","name":"Is Line Sizing Manager free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The web edition is free and needs no sign-up. It runs entirely in your browser."}},
  {"@type":"Question","name":"Which standards and methods does it use?","acceptedAnswer":{"@type":"Answer","text":"Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water properties, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness."}},
- {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 90 reference cases. 220 of 221 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
+ {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 104 reference cases. All 318 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
  {"@type":"Question","name":"Is my data stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing you enter leaves your device. The page makes no network requests while you work, and saved lines stay in your own browser."}},
  {"@type":"Question","name":"Can I use the results for design?","acceptedAnswer":{"@type":"Answer","text":"Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specifications and applicable codes before design, procurement or construction."}}]}
 </script>
@@ -222,6 +222,44 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 @media (max-width:900px){.kpis{grid-template-columns:1fr 1fr}.dgrid,.mgrid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.pipeline li::after{display:none}.fl{grid-template-columns:repeat(3,1fr)}.mfeat{grid-template-columns:1fr}.lr{grid-template-columns:60px 1fr 1fr;}.lr em{grid-column:1/-1;text-align:left}footer .cols{grid-template-columns:1fr}.members h2{font-size:30px}}
 @media (max-width:520px){.fl{grid-template-columns:1fr 1fr}.kpi b{font-size:32px}.mbar .mb-l span{display:none}}
 @media (prefers-reduced-motion: reduce){.rv,.lr,.co{opacity:1;transform:none;transition:none}.chart .b{transform:none;transition:none}.gg .fl{transition:none;stroke-dashoffset:calc(100 - var(--v))}.flowp path,.vflow path,.stem,.mqi{animation:none}.mqi{flex-wrap:wrap;width:auto}.gi{transition:none}}
+/*@theme-start*/
+:root,:root:not([data-theme="dark"]){--ink:#1c2630;--muted:#566370;--line:#d4dae1;--bg:#eef1f4;--panel:#ffffff;--soft:#f6f8fa;--navy:#14283b;--accent:#1f5fa0;--accent-soft:#e7eef6;--accent2:#1f5fa0;--teal-bright:#1f5fa0;--gold:#a8690b;
+--pass:#2e7d32;--pass-bg:#e8f3e9;--warn:#a65f00;--warn-bg:#fff3e0;--fail:#c62828;--fail-bg:#fdecea;--info:#1f5fa0;--info-bg:#e7eef6;--zone-ok:#cfe6d0;--zone-warn:#f6e0b8;--zone-bad:#f3c7c3;
+--font-head:"Inter","Segoe UI",Roboto,Arial,sans-serif;--grad:linear-gradient(#1f5fa0,#1f5fa0);--grad-btn:linear-gradient(#1f5fa0,#1f5fa0);color-scheme:light}
+:root[data-theme="dark"]{--ink:#e5e8eb;--muted:#9aa3ad;--line:#353b43;--bg:#15181c;--panel:#1d2126;--soft:#23282e;--navy:#101c28;--accent:#6aa3e0;--accent-soft:#1e2b3a;--accent2:#6aa3e0;--teal-bright:#6aa3e0;--gold:#e0a84a;
+--pass:#6cbf72;--pass-bg:#1c2e1e;--warn:#e0a84a;--warn-bg:#33270f;--fail:#ef7d74;--fail-bg:#3a1c19;--info:#8bb8e8;--info-bg:#1e2b3a;--zone-ok:#28452b;--zone-warn:#5a4618;--zone-bad:#5e2723;color-scheme:dark}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+h1,h2,h3{font-family:var(--font-body);letter-spacing:-.015em}
+header.mast,.cta-band,.dash{background:var(--navy)}
+.bg-glow,.eyebrow .dot{display:none}
+.eyebrow,.eye2{color:#9fb7cf}
+.btn{border-radius:4px}.btn:hover{transform:none}
+.btn.primary,.btn.primary:hover{background:#fff;color:#14283b;box-shadow:none;filter:none;border-color:#fff}.btn.primary:hover{background:#e7eef6}
+.btn.ghost{border-color:#5d7690;color:#e9f1f8}.btn.ghost:hover{border-color:#fff}
+.author .btn.ghost{border-color:var(--accent);color:var(--accent)}
+.shot{border-radius:4px;box-shadow:0 10px 30px rgba(0,0,0,.28);border:1px solid #2b4560}
+.stats::before{background:var(--accent);animation:none}
+.stat b{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--ink)}
+.steps li::before{background:var(--accent)}
+.card{border-radius:6px;box-shadow:none}.card:hover{border-color:var(--accent);box-shadow:none}
+.chart .b.ok{fill:#1f5fa0}.gg .fl{stroke:#1f5fa0}.lr.p{border-color:#1f5fa0;background:rgba(31,95,160,.10)}
+svg.flow{opacity:.45}
+.fsnew .tag{background:#1f5fa0;color:#fff;border-radius:3px}
+.mbar{background:#1b2a3a;color:#e6ebf0;border-bottom:2px solid #c27c0e}.mbar .mb-l,.mbar a{color:#f0c27a}
+.mbar .mb-btn{background:#c27c0e;color:#fff;border-radius:3px}
+.members{background:#1b2a3a;color:#e6ebf0}
+.mtag{background:#c27c0e;color:#fff;border-radius:3px}
+.members h2::after{background:#c27c0e}
+.vflow path{stroke:#e0a84a}
+.mshot img{border-radius:4px;border:1px solid #34495e;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.mbtn{background:#c27c0e;color:#fff;border-radius:4px;box-shadow:none}.mbtn:hover{background:#a8690b}
+.mlink{color:#f0c27a}
+.cmp thead th{background:rgba(194,124,14,.16);color:#f3d9a8}
+.grad{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#8fb8e6}
+.kpi b{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#e9f1f8}
+.dash .kpi,.dash .card{border-radius:4px}
+/*@theme-end*/
 </style>
 </head>
 <body>
@@ -255,8 +293,8 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
   <div class="dh rv"><span class="eye2">LIVE ENGINEERING DASHBOARD</span><h2>What a sizing run looks like</h2><p class="sub">A real case from the calculator: cooling water at 100 m³/h on pump discharge, NPS 2 to 8, Schedule 40 carbon steel. Every number below comes from the same engine you use.</p></div>
   <div class="kpis">
     <div class="kpi rv"><span class="kl">Calculation modules</span><b class="cnt" data-to="8">0</b><span class="ks">liquid · gas · two-phase · wall · Cv · PSV · fittings · insulation</span></div>
-    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="220">0</span><small> / 221</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
-    <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="20">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
+    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="318">0</span><small> / 318</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
+    <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="37">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
     <div class="kpi rv"><span class="kl">Crane fittings &amp; valves</span><b class="cnt" data-to="26">0</b><span class="ks">K = n·fT with reducers &amp; expanders</span></div>
   </div>
   <div class="dgrid">
@@ -362,7 +400,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 
 <section class="marq" aria-label="Standards and methods"><div class="mq"><div class="mqi"><span>API 520 Part II</span><span>API 521</span><span>API RP 14E</span><span>ASME B31.3</span><span>ASME B36.10M</span><span>ASME B36.19M</span><span>EN 10220</span><span>Crane TP-410</span><span>IAPWS-IF97</span><span>IAPWS 2008</span><span>IEC 60534-2-1</span><span>Peng–Robinson</span><span>DIPPR 101/105</span><span>Colebrook–White</span><span>Lockhart–Martinelli</span><span>Thomson–Brobst–Hankinson</span><span>API 520 Part II</span><span>API 521</span><span>API RP 14E</span><span>ASME B31.3</span><span>ASME B36.10M</span><span>ASME B36.19M</span><span>EN 10220</span><span>Crane TP-410</span><span>IAPWS-IF97</span><span>IAPWS 2008</span><span>IEC 60534-2-1</span><span>Peng–Robinson</span><span>DIPPR 101/105</span><span>Colebrook–White</span><span>Lockhart–Martinelli</span><span>Thomson–Brobst–Hankinson</span></div></div></section>
 
-<section class="s" id="fluids"><div class="w"><h2 class="rv">Fluids built in</h2><p class="sub rv">Properties are calculated from temperature and pressure for every case, with an override for your simulation data.</p><div class="fl"><div class="fc rv" style="--d:0.00s"><b>H₂O</b><span>Water / BFW</span></div><div class="fc rv" style="--d:0.04s"><b>H₂O</b><span>Steam IF97</span></div><div class="fc rv" style="--d:0.08s"><b>NH₃</b><span>Liquid ammonia</span></div><div class="fc rv" style="--d:0.12s"><b>NH₃</b><span>Ammonia vapour</span></div><div class="fc rv" style="--d:0.16s"><b>CO(NH₂)₂</b><span>Urea solution</span></div><div class="fc rv" style="--d:0.20s"><b>CO(NH₂)₂</b><span>Urea melt</span></div><div class="fc rv" style="--d:0.24s"><b>NH₂COONH₄</b><span>Carbamate</span></div><div class="fc rv" style="--d:0.28s"><b>CO₂</b><span>Carbon dioxide</span></div><div class="fc rv" style="--d:0.32s"><b>H₂</b><span>Hydrogen</span></div><div class="fc rv" style="--d:0.36s"><b>N₂</b><span>Nitrogen</span></div><div class="fc rv" style="--d:0.40s"><b>O₂</b><span>Oxygen</span></div><div class="fc rv" style="--d:0.44s"><b>Air</b><span>Air</span></div><div class="fc rv" style="--d:0.48s"><b>CH₄</b><span>Natural gas</span></div><div class="fc rv" style="--d:0.52s"><b>3H₂+N₂</b><span>Synthesis gas</span></div><div class="fc rv new" style="--d:0.56s"><b>CH₃OH</b><span>Methanol</span></div><div class="fc rv new" style="--d:0.60s"><b>MEG-50</b><span>Glycol brine 50 %</span></div><div class="fc rv new" style="--d:0.64s"><b>Ar</b><span>Argon</span></div><div class="fc rv new" style="--d:0.68s"><b>CO</b><span>Carbon monoxide</span></div><div class="fc rv new" style="--d:0.72s"><b>N₂·CO₂·H₂O</b><span>Flue gas</span></div><div class="fc rv new" style="--d:0.76s"><b>H₂·CO·H₂O</b><span>Reformed gas</span></div></div></div></section>
+<section class="s" id="fluids"><div class="w"><h2 class="rv">Fluids built in</h2><p class="sub rv">Properties are calculated from temperature and pressure for every case, with an override for your simulation data.</p><div class="fl"><div class="fc rv" style="--d:0.00s"><b>H₂O</b><span>Water / BFW</span></div><div class="fc rv" style="--d:0.04s"><b>H₂O</b><span>Steam IF97</span></div><div class="fc rv" style="--d:0.08s"><b>NH₃</b><span>Liquid ammonia</span></div><div class="fc rv" style="--d:0.12s"><b>NH₃</b><span>Ammonia vapour</span></div><div class="fc rv" style="--d:0.16s"><b>CO(NH₂)₂</b><span>Urea solution</span></div><div class="fc rv" style="--d:0.20s"><b>CO(NH₂)₂</b><span>Urea melt</span></div><div class="fc rv" style="--d:0.24s"><b>NH₂COONH₄</b><span>Carbamate</span></div><div class="fc rv" style="--d:0.28s"><b>CO₂</b><span>Carbon dioxide</span></div><div class="fc rv" style="--d:0.32s"><b>H₂</b><span>Hydrogen</span></div><div class="fc rv" style="--d:0.36s"><b>N₂</b><span>Nitrogen</span></div><div class="fc rv" style="--d:0.40s"><b>O₂</b><span>Oxygen</span></div><div class="fc rv" style="--d:0.44s"><b>Air</b><span>Air</span></div><div class="fc rv" style="--d:0.48s"><b>CH₄</b><span>Natural gas</span></div><div class="fc rv" style="--d:0.52s"><b>3H₂+N₂</b><span>Synthesis gas</span></div><div class="fc rv" style="--d:0.56s"><b>CH₃OH</b><span>Methanol</span></div><div class="fc rv" style="--d:0.60s"><b>MEG-50</b><span>Glycol brine 50 %</span></div><div class="fc rv" style="--d:0.64s"><b>Ar</b><span>Argon</span></div><div class="fc rv" style="--d:0.68s"><b>CO</b><span>Carbon monoxide</span></div><div class="fc rv" style="--d:0.72s"><b>N₂·CO₂·H₂O</b><span>Flue gas</span></div><div class="fc rv" style="--d:0.76s"><b>H₂·CO·H₂O</b><span>Reformed gas</span></div><div class="fc rv new" style="--d:0.80s"><b>C₂H₅OH</b><span>Ethanol</span></div><div class="fc rv new" style="--d:0.83s"><b>C₇H₈</b><span>Toluene</span></div><div class="fc rv new" style="--d:0.86s"><b>C₆H₆</b><span>Benzene</span></div><div class="fc rv new" style="--d:0.89s"><b>C₆H₁₄</b><span>n-Hexane</span></div><div class="fc rv new" style="--d:0.92s"><b>C₇H₁₆</b><span>n-Heptane</span></div><div class="fc rv new" style="--d:0.95s"><b>C₆H₁₂</b><span>Cyclohexane</span></div><div class="fc rv new" style="--d:0.98s"><b>C₃H₈</b><span>Propane / LPG (liquid & gas)</span></div><div class="fc rv new" style="--d:1.01s"><b>C₄H₁₀</b><span>n-Butane (liquid & gas)</span></div><div class="fc rv new" style="--d:1.04s"><b>i-C₄H₁₀</b><span>Isobutane (liquid)</span></div><div class="fc rv new" style="--d:1.07s"><b>HTF</b><span>Therminol 66 hot oil</span></div><div class="fc rv new" style="--d:1.10s"><b>HTF</b><span>Syltherm 800 hot oil</span></div><div class="fc rv new" style="--d:1.13s"><b>SW</b><span>Seawater 3.5 %</span></div><div class="fc rv new" style="--d:1.16s"><b>C₂H₆</b><span>Ethane</span></div><div class="fc rv new" style="--d:1.19s"><b>H₂S</b><span>Hydrogen sulphide</span></div><div class="fc rv new" style="--d:1.22s"><b>He</b><span>Helium</span></div></div></div></section>
 
 <section class="s alt"><div class="w">
   <h2>How it works</h2>
@@ -411,16 +449,16 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 
 <section class="s alt" id="validation"><div class="w">
   <h2>How it was validated</h2>
-  <p class="sub">The calculator carries its own self-test: 90 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab, or read the <a href="validation/">full validation report</a> with every case, source and tolerance.</p>
+  <p class="sub">The calculator carries its own self-test: 104 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab, or read the <a href="validation/">full validation report</a> with every case, source and tolerance.</p>
   <div class="val">
     <table>
       <thead><tr><th>Module</th><th class="n">Graded checks</th><th class="n">Largest deviation</th></tr></thead>
       <tbody>
-        <tr><td>Liquid properties &amp; hydraulics</td><td class="n">59</td><td class="n ok">0.95 %</td></tr>
+        <tr><td>Liquid properties &amp; hydraulics</td><td class="n">131</td><td class="n ok">1.26 %</td></tr>
         <tr><td>Fittings (Crane K)</td><td class="n">4</td><td class="n ok">0.94 %</td></tr>
         <tr><td>Steam</td><td class="n">15</td><td class="n ok">0.12 %</td></tr>
-        <tr><td>Gases</td><td class="n">46</td><td class="n dev">5.16 %*</td></tr>
-        <tr><td>Two-phase</td><td class="n">12</td><td class="n ok">2.72 %</td></tr>
+        <tr><td>Gases</td><td class="n">71</td><td class="n ok">4.18 %</td></tr>
+        <tr><td>Two-phase</td><td class="n">12</td><td class="n ok">2.65 %</td></tr>
         <tr><td>Wall thickness</td><td class="n">16</td><td class="n ok">0.00 %</td></tr>
         <tr><td>Flow regime (Mandhane map)</td><td class="n">30</td><td class="n ok">0.00 %</td></tr>
         <tr><td>Heat loss &amp; insulation</td><td class="n">20</td><td class="n ok">0.35 %</td></tr>
@@ -431,12 +469,12 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
     <div>
       <p style="margin-top:0">References used:</p>
       <ul class="refs">
-        <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air, methanol, argon) — the same basis as NIST REFPROP; its multi-fluid mixture model for flue gas and reformed gas; and the Melinder model for ethylene glycol brine</li>
+        <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air, methanol, argon) — the same basis as NIST REFPROP; its multi-fluid mixture model for flue gas and reformed gas; and the Melinder model for ethylene glycol brine; reference equations for ethane, propane, n- and isobutane, n-hexane, n-heptane, cyclohexane, benzene, toluene, ethanol, H₂S and helium; CoolProp incompressible data for Therminol 66, Syltherm 800 and seawater</li>
         <li>The <i>fluids</i> engineering library: exact Colebrook solution, Crane TP-410 fittings, isothermal compressible flow, IEC 60534 valve sizing</li>
         <li>Independent hand calculations for API RP 14E, Lockhart–Martinelli and ASME B31.3</li>
         <li>The <i>fluids</i> Mandhane–Gregory–Aziz flow-pattern map, and an independent heat-loss solver built on the <i>ht</i> library (Churchill–Chu, Churchill–Bernstein and radiation, per ASTM C680 / ISO 12241)</li>
       </ul>
-      <p style="color:var(--muted);font-size:14px">* One documented deviation: ammonia-vapour viscosity near saturation reads 5.2 % high against a 5 % tolerance; its effect on pressure drop is about 1 %.</p>
+      <p style="color:var(--muted);font-size:14px">All 318 checks pass. The ammonia-vapour viscosity check, which read 5.2 % high until November 2026, now passes after the dense-gas viscosity correction was made to vanish at zero density.</p>
     </div>
   </div>
 </div></section>
@@ -496,7 +534,7 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
     <p>© 2026 Muhammad Anas · Line Sizing Manager. All rights reserved. The calculator is provided free for learning and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
     <h3 id="privacy">Privacy</h3>
     <p>This site uses no cookies, no analytics and no tracking. Everything you type stays on your device.</p>
-    <p class="fver">Version 2026.11.8.8 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.8.8. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
+    <p class="fver">Version 2026.11.8.9 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.8.9. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
   </div>
   <div>
     <h3>Line Sizing Manager</h3>
