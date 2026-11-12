@@ -3,35 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Line Sizing Calculator for Process Plants — Line Sizing Manager</title>
-<meta name="description" content="Free online line sizing calculator for process plants. Size liquid, gas, steam and two-phase lines, control valves (IEC 60534) and PSV inlet and outlet lines (API 520/521), with ASME B31.3 wall thickness. Validated against CoolProp.">
+<title>ProcessDesk — engineering tools for process plants: line sizing, pump sizing, control valves, flowsheets</title>
+<meta name="description" content="ProcessDesk: validated engineering tools for process plants. Line Sizing Manager and Pump Sizing are free in the browser; Control Valve Sizing Manager and the process flowsheet are for members.">
 <link rel="canonical" href="https://anasneymarswb2-debug.github.io/Line-Size-Manger/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="referrer" content="no-referrer">
 <script>if(window.top!==window.self){try{window.top.location.replace(window.self.location.href)}catch(e){document.documentElement.style.display="none"}}</script>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-toacR8iP+t6BGVtv2YKYD2XN6t/DM71OTbXZvqd6fLQ=' 'sha256-s3504UP8O7m26ozegkcz1dQL03XYyTYyvjeQh71dXZ4='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src-attr 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-toacR8iP+t6BGVtv2YKYD2XN6t/DM71OTbXZvqd6fLQ=' 'sha256-gxah2rDGujQ0UCLWRu98RdfyTyomlpiwGrbPuARHI1I='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src-attr 'none'">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Line Sizing Manager — line sizing calculator for process plants">
-<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 365 of 365 validation checks pass against reference data.">
+<meta property="og:title" content="ProcessDesk — engineering tools for process plants">
+<meta property="og:description" content="Line sizing, pump sizing, control valve sizing and process flowsheets, validated against reference data. Choose a tool and start.">
 <meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/">
 <meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="fonts/fonts.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Line Sizing Manager","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/app/","applicationCategory":"EngineeringApplication","operatingSystem":"Any (web browser)","isAccessibleForFree":true,
+{"@context":"https://schema.org","@type":"WebSite","name":"ProcessDesk","alternateName":"ProcessDesk engineering tools","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/",
  "author":{"@type":"Person","name":"Muhammad Anas","jobTitle":"Process Design Engineer","sameAs":["https://www.linkedin.com/in/muhammad-anas-a630a1227"]},
- "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
- "description":"Line sizing calculator for process plants: liquid, gas and steam, two-phase (API RP 14E), control valve sizing (IEC 60534-2-1), PSV inlet and outlet lines (API 520 Part II / API 521) and ASME B31.3 pipe wall thickness, with Crane TP-410 fittings and EN 10220 / ASME B36.10M pipe tables.",
- "featureList":["Members: process flowsheet with hydraulic networks (validated against EPANET) and steam/water heat and material balances (IAPWS-IF97)","Liquid line sizing with NPSH available","Centrifugal pump sizing: head, NPSH margin (HI 9.6.1), API 610 motor rating, HI 9.6.7 viscosity correction","Compressible gas and steam line sizing","Two-phase erosional velocity (API RP 14E)","Control valve sizing (IEC 60534-2-1)","PSV inlet loss and back pressure (API 520 Part II, API 521)","ASME B31.3 wall thickness","Crane TP-410 fittings with reducers and expanders","Excel and PDF line list and calculation sheets","Two-phase flow regime map (Mandhane) with slug flagging","Gas line erosional velocity check (API RP 14E)","Heat loss and insulation thickness check for hot and cold lines"]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
- {"@type":"Question","name":"Is Line Sizing Manager free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The web edition is free and needs no sign-up. It runs entirely in your browser."}},
- {"@type":"Question","name":"Which standards and methods does it use?","acceptedAnswer":{"@type":"Answer","text":"Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water properties, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness."}},
- {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 112 reference cases. All 365 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
- {"@type":"Question","name":"Is my data stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing you enter leaves your device. The page makes no network requests while you work, and saved lines stay in your own browser."}},
- {"@type":"Question","name":"Can I use the results for design?","acceptedAnswer":{"@type":"Answer","text":"Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specifications and applicable codes before design, procurement or construction."}}]}
+ "hasPart":[{"@type":"SoftwareApplication","name":"Line Sizing Manager","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/app/","applicationCategory":"EngineeringApplication","isAccessibleForFree":true},
+  {"@type":"SoftwareApplication","name":"Pump Sizing","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/app/#pump","applicationCategory":"EngineeringApplication","isAccessibleForFree":true},
+  {"@type":"SoftwareApplication","name":"Control Valve Sizing Manager","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/valve/","applicationCategory":"EngineeringApplication","isAccessibleForFree":false},
+  {"@type":"SoftwareApplication","name":"Process Flowsheet","url":"https://anasneymarswb2-debug.github.io/Line-Size-Manger/flowsheet/","applicationCategory":"EngineeringApplication","isAccessibleForFree":false}]}
 </script>
 <style>
 /* Layout idea: an engineering datasheet turned landing page. Navy masthead like the tool, a single strong claim, then evidence (modules, validation, standards) in ruled sections. */
@@ -222,6 +215,28 @@ footer .cols{grid-template-columns:2fr 1fr 1fr}.fmem h3{color:#7c5a12}.fmem a{co
 @media (max-width:900px){.kpis{grid-template-columns:1fr 1fr}.dgrid,.mgrid{grid-template-columns:1fr}.pipeline{grid-template-columns:1fr 1fr}.pipeline li::after{display:none}.fl{grid-template-columns:repeat(3,1fr)}.mfeat{grid-template-columns:1fr}.lr{grid-template-columns:60px 1fr 1fr;}.lr em{grid-column:1/-1;text-align:left}footer .cols{grid-template-columns:1fr}.members h2{font-size:30px}}
 @media (max-width:520px){.fl{grid-template-columns:1fr 1fr}.kpi b{font-size:32px}.mbar .mb-l span{display:none}}
 @media (prefers-reduced-motion: reduce){.rv,.lr,.co{opacity:1;transform:none;transition:none}.chart .b{transform:none;transition:none}.gg .fl{transition:none;stroke-dashoffset:calc(100 - var(--v))}.flowp path,.vflow path,.stem,.mqi{animation:none}.mqi{flex-wrap:wrap;width:auto}.gi{transition:none}}
+
+/* ---- ProcessDesk hub ---- */
+.hub-hero{padding:26px 0 46px;max-width:860px}
+.hub-hero h1{font-size:46px;line-height:1.08;margin:14px 0 14px}
+.hub-hero .lead{max-width:720px}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-6px}
+.tool{position:relative;display:flex;flex-direction:column;gap:10px;padding:24px 22px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--ink);text-decoration:none;box-shadow:0 1px 2px rgba(11,31,51,.05);transition:border-color .15s,box-shadow .15s,transform .15s}
+.tool:hover,.tool:focus-visible{border-color:var(--accent);box-shadow:0 10px 28px rgba(11,31,51,.12);transform:translateY(-2px);outline:none}
+.tool .ic{width:56px;height:56px;color:var(--accent)}
+.tool.mem .ic{color:#c27c0e}
+.tool h3{margin:4px 0 0;font-size:20px;letter-spacing:-.01em}
+.tool p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5;flex:1}
+.tool .std{font:500 12px var(--font-mono);color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.tool .badge{position:absolute;top:16px;right:16px;font:600 11px var(--font-mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:20px;background:var(--accent-soft);color:var(--accent)}
+.tool.mem .badge{background:#fbf1de;color:#8a5606}
+.tool .go{font-weight:600;color:var(--accent);font-size:15px}.tool.mem .go{color:#8a5606}
+.tool:hover .go{text-decoration:underline}
+.more{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px;font-size:14.5px}.more a{color:var(--accent)}
+.hfacts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hfact{border-left:3px solid var(--accent);padding:4px 0 4px 16px}.hfact b{display:block;font-size:26px;letter-spacing:-.02em;color:var(--ink)}.hfact span{color:var(--muted);font-size:14.5px}
+@media (max-width:1100px){.tools{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.tools,.hfacts{grid-template-columns:1fr}.hub-hero h1{font-size:34px}}
 /*@theme-start*/
 :root,:root:not([data-theme="dark"]){--ink:#1c2630;--muted:#566370;--line:#d4dae1;--bg:#eef1f4;--panel:#ffffff;--soft:#f6f8fa;--navy:#14283b;--accent:#1f5fa0;--accent-soft:#e7eef6;--accent2:#1f5fa0;--teal-bright:#1f5fa0;--gold:#a8690b;
 --pass:#2e7d32;--pass-bg:#e8f3e9;--warn:#a65f00;--warn-bg:#fff3e0;--fail:#c62828;--fail-bg:#fdecea;--info:#1f5fa0;--info-bg:#e7eef6;--zone-ok:#cfe6d0;--zone-warn:#f6e0b8;--zone-bad:#f3c7c3;
@@ -263,7 +278,6 @@ svg.flow{opacity:.45}
 </style>
 </head>
 <body>
-<div class="mbar" role="region" aria-label="Members area"><div class="w"><span class="mb-l"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><b>MEMBERS AREA</b><span class="hide-s">Control Valve Sizing Manager and process flowsheet · separate from the free line sizing tool</span></span><a href="members/">Learn more</a><a class="mb-btn" href="valve/">Members sign in →</a></div></div>
 <header class="mast">
 <div class="bg" aria-hidden="true"><div class="bg-grid"></div><div class="bg-glow g1"></div><div class="bg-glow g2"></div>
   <svg class="flow" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice">
@@ -273,279 +287,71 @@ svg.flow{opacity:.45}
   </svg></div>
   <div class="w">
     <nav class="top" aria-label="Main">
-      <a class="brand" href="./"><img src="favicon.svg" alt="" width="30" height="30">Line Sizing Manager</a>
-      <ul><li class="hide-s"><a href="#dashboard">Dashboard</a></li><li class="hide-s"><a href="#modules">Modules</a></li><li class="hide-s"><a href="#gallery">Gallery</a></li><li class="hide-s"><a href="#validation">Validation</a></li><li class="hide-s"><a href="#flowsheet">Flowsheet</a></li><li class="hide-s"><a href="guides/">Guides</a></li><li class="hide-s"><a href="#faq">FAQ</a></li><li class="hide-s"><a href="#author">Author</a></li><li><a class="btn primary" href="app/">Open the calculator</a></li></ul>
+      <a class="brand" href="./"><img src="favicon.svg" alt="" width="30" height="30">ProcessDesk</a>
+      <ul><li class="hide-s"><a href="#tools">Tools</a></li><li class="hide-s"><a href="guides/">Guides</a></li><li class="hide-s"><a href="validation/">Validation</a></li><li class="hide-s"><a href="members/">Members</a></li><li><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul>
     </nav>
-    <div class="hero">
-      <div>
-        <div class="eyebrow"><span class="dot"></span>Free · browser-based · validated</div>
-        <h1>Line sizing calculator <span class="grad">for process plants</span></h1>
-        <p class="lead">Size liquid, gas, steam and two-phase lines, control valves and relief-valve piping in one place. Every criterion is shown in colour, and the calculations are checked against reference data.</p>
-        <div class="ctas"><a class="btn primary" href="app/">Open the calculator — free</a><a class="btn ghost" href="#dashboard">See it in action</a></div>
-        <p class="trust">No sign-up · works offline once loaded · nothing you enter leaves your device</p>
-      </div>
-      <div class="shot"><img src="shot-liquid.jpg" width="1200" height="760" alt="Line Sizing Manager showing a liquid ammonia pump suction line: green 'line size acceptable' verdict, velocity and pressure-drop gauges, and the size ladder."></div>
+    <div class="hub-hero">
+      <div class="eyebrow"><span class="dot"></span>Engineering tools for process plants</div>
+      <h1>Choose a tool <span class="grad">and start designing</span></h1>
+      <p class="lead">Validated calculators for the hydraulic and equipment work of a process design engineer. Each one runs in your browser; nothing you enter leaves your device.</p>
     </div>
   </div>
 </header>
-
-<section class="dash" id="dashboard"><div class="w">
-  <div class="dh rv"><span class="eye2">LIVE ENGINEERING DASHBOARD</span><h2>What a sizing run looks like</h2><p class="sub">A real case from the calculator: cooling water at 100 m³/h on pump discharge, NPS 2 to 8, Schedule 40 carbon steel. Every number below comes from the same engine you use.</p></div>
-  <div class="kpis">
-    <div class="kpi rv"><span class="kl">Calculation modules</span><b class="cnt" data-to="9">0</b><span class="ks">liquid · gas · two-phase · wall · Cv · PSV · fittings · insulation · pump</span></div>
-    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="365">0</span><small> / 365</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
-    <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="37">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
-    <div class="kpi rv"><span class="kl">Crane fittings &amp; valves</span><b class="cnt" data-to="26">0</b><span class="ks">K = n·fT with reducers &amp; expanders</span></div>
+<section class="s" id="tools"><div class="w">
+  <h2 class="rv">Tools</h2>
+  <div class="tools">
+    <a class="tool" href="app/"><span class="badge">Free</span><svg class="ic" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 34h14l6-12h8l6 12h14"/><path d="M4 26h14M38 26h14"/><path d="M24 22V12M32 22V12M20 12h16"/><circle cx="28" cy="40" r="3"/><path d="M28 43v6"/></svg><h3>Line Sizing Manager</h3>
+      <p>Liquid, gas, steam and two-phase lines, PSV inlet and outlet lines, B31.3 wall thickness, heat loss and insulation, with a line list in Excel and PDF.</p>
+      <span class="std">Crane TP-410 · API 520/521 · RP 14E · B31.3</span><span class="go">Open →</span></a>
+    <a class="tool" href="app/#pump"><span class="badge">Free</span><svg class="ic" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="30" r="13"/><circle cx="24" cy="30" r="3.5"/><path d="M24 17h22v8h-9"/><path d="M14 47l-4 6h28l-4-6"/><path d="M24 30l7-6M24 30l-8 4"/></svg><h3>Pump Sizing</h3>
+      <p>Rated head, NPSH available and margin, absorbed power and motor rating, viscosity correction and a vendor-offer check, with a process datasheet in Excel.</p>
+      <span class="std">API 610 · ANSI/HI 9.6.1 · HI 9.6.7</span><span class="go">Open →</span></a>
+    <a class="tool mem" href="valve/"><span class="badge">Members</span><svg class="ic" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 40l16-10v20zM50 40L34 30v20z"/><path d="M22 40h12"/><path d="M28 40V22"/><path d="M16 22a12 8 0 0 1 24 0z"/><path d="M28 14v-6"/></svg><h3>Control Valve Sizing</h3>
+      <p>Liquid, gas, steam and two-phase Cv, choked flow, cavitation and flashing, noise, installed characteristic, B16.34 rating and a full calculation report.</p>
+      <span class="std">IEC 60534-2-1 · -8-3 · -8-4 · FCI 70-2</span><span class="go">Sign in →</span></a>
+    <a class="tool mem" href="flowsheet/"><span class="badge">Members</span><svg class="ic" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="14" height="22" rx="7"/><circle cx="28" cy="40" r="7"/><rect x="40" y="30" width="12" height="18" rx="2"/><path d="M11 30v10h10M35 40h5M28 33V19h14v11"/><path d="M39 16l3 3-3 3"/></svg><h3>Process Flowsheet</h3>
+      <p>Draw a hydraulic network of tanks, pumps, pipes and control valves and solve it, or build a steam and water heat and material balance.</p>
+      <span class="std">EPANET-validated solver · IAPWS-IF97</span><span class="go">Sign in →</span></a>
   </div>
-  <div class="dgrid">
-    <div class="panel rv"><div class="ph"><span>Velocity by pipe size</span><span class="tag">limit 3.0 m/s</span></div>
-      <svg class="chart" viewBox="0 0 520 260" role="img" aria-label="Velocity by pipe size: 2 inch 12.8, 3 inch 5.8, 4 inch 3.4, 6 inch 1.5, 8 inch 0.9 metres per second">
-        <g class="gl"><line x1="50" x2="505" y1="215" y2="215"/><line x1="50" x2="505" y1="165" y2="165"/><line x1="50" x2="505" y1="115" y2="115"/><line x1="50" x2="505" y1="65" y2="65"/><line x1="50" x2="505" y1="15" y2="15"/></g>
-        <g class="ax"><text x="42" y="219">0</text><text x="42" y="169">3.5</text><text x="42" y="119">7</text><text x="42" y="69">10.5</text><text x="42" y="19">14</text></g>
-        <line class="lim" x1="50" x2="505" y1="172.1" y2="172.1"/><text class="limt" x="503" y="166">3.0 m/s limit</text>
-        <g class="bars">
-          <rect class="b bad" x="72" width="56" y="31.6" height="183.4" style="--d:0s"/><rect class="b bad" x="162" width="56" y="131.7" height="83.3" style="--d:.12s"/><rect class="b bad" x="252" width="56" y="166.7" height="48.3" style="--d:.24s"/><rect class="b ok" x="342" width="56" y="193.7" height="21.3" style="--d:.36s"/><rect class="b ok" x="432" width="56" y="202.7" height="12.3" style="--d:.48s"/>
-        </g>
-        <g class="bv"><text x="100" y="25">12.8</text><text x="190" y="125">5.83</text><text x="280" y="160">3.38</text><text x="370" y="187">1.49</text><text x="460" y="196">0.86</text></g>
-        <g class="ax2"><text x="100" y="238">2"</text><text x="190" y="238">3"</text><text x="280" y="238">4"</text><text x="370" y="238">★ 6"</text><text x="460" y="238">8"</text></g>
-      </svg></div>
-    <div class="panel rv"><div class="ph"><span>Limit utilisation at 6" Sch 40</span><span class="tag ok">PASS</span></div>
-      <div class="gauges2">
-        <div class="gg" style="--v:50"><svg viewBox="0 0 120 70"><path class="tr" d="M10 62a50 50 0 0 1 100 0"/><path class="fl" pathLength="100" d="M10 62a50 50 0 0 1 100 0"/></svg><b>50 %</b><span>velocity<br>1.49 of 3.0 m/s</span></div>
-        <div class="gg" style="--v:27"><svg viewBox="0 0 120 70"><path class="tr" d="M10 62a50 50 0 0 1 100 0"/><path class="fl" pathLength="100" d="M10 62a50 50 0 0 1 100 0"/></svg><b>27 %</b><span>friction ΔP<br>0.12 of 0.45 bar/100 m</span></div>
-        <div class="gg bad" style="--v:100"><svg viewBox="0 0 120 70"><path class="tr" d="M10 62a50 50 0 0 1 100 0"/><path class="fl" pathLength="100" d="M10 62a50 50 0 0 1 100 0"/></svg><b>113 %</b><span>4" for comparison<br>fails: 3.38 of 3.0 m/s</span></div>
-      </div>
-      <dl class="facts"><div><dt>Density</dt><dd>995.9 kg/m³</dd></div><div><dt>Viscosity</dt><dd>0.797 cP</dd></div><div><dt>Inside diameter</dt><dd>154.1 mm</dd></div><div><dt>Reynolds</dt><dd>2.87 × 10⁵</dd></div><div><dt>Friction factor</dt><dd>0.0170</dd></div><div><dt>ρv²</dt><dd>2 210 Pa</dd></div></dl>
-      <p class="fbasis">Water at 30 °C and 6 bar(a), IAPWS-IF97; Colebrook–White with ε = 0.046 mm.</p></div>
-    <div class="panel rv wide"><div class="ph"><span>Size ladder: the calculator steps up until every criterion passes</span><span class="tag">▲ ▲ ▲ ✔</span></div>
-      <div class="ladder2">
-        <div class="lr f" style="--d:0s"><b>2"</b><span>12.84 m/s</span><span>30.4 bar/100 m</span><em>▲ increase</em></div>
-        <div class="lr f" style="--d:.25s"><b>3"</b><span>5.83 m/s</span><span>3.93 bar/100 m</span><em>▲ increase</em></div>
-        <div class="lr f" style="--d:.5s"><b>4"</b><span>3.38 m/s</span><span>0.97 bar/100 m</span><em>▲ increase</em></div>
-        <div class="lr p" style="--d:.75s"><b>★ 6"</b><span>1.49 m/s</span><span>0.12 bar/100 m</span><em>✔ acceptable</em></div>
-        <div class="lr o" style="--d:1s"><b>8"</b><span>0.86 m/s</span><span>0.03 bar/100 m</span><em>oversized</em></div>
-      </div></div>
+  <div class="more"><a href="line-sizing/">More about Line Sizing Manager</a><a href="members/">What members get</a><a href="guides/">Engineering guides</a><a href="validation/">Full validation report</a></div>
+</div></section>
+<section class="s alt" id="trust"><div class="w">
+  <div class="hfacts">
+    <div class="hfact rv"><b>365 of 365</b><span>reference checks pass in the free tools, against CoolProp, the <i>fluids</i> library, published standard examples and hand calculations.</span></div>
+    <div class="hfact rv"><b>No sign-up</b><span>The free tools open straight away. No cookies, no tracking, and the pages make no network requests while you work.</span></div>
+    <div class="hfact rv"><b>Standards first</b><span>Every result shows its method and acceptance criterion, so you can check it the way a reviewer would.</span></div>
   </div>
 </div></section>
-
-<main>
-<section class="s" id="process"><div class="w">
-  <h2 class="rv">From the P&amp;ID to a verdict</h2>
-  <p class="sub rv">The calculator follows the line the way you draw it: source vessel, pump, fittings, control valve and destination, with properties evaluated at every case.</p>
-  <figure class="pfd rv"><svg viewBox="0 0 1100 300" role="img" aria-label="Illustration of a process line: vessel V-101, pump P-102, pipe with elbows, control valve FV-103 and heat exchanger E-104">
-    <defs><linearGradient id="vg" x1="0" x2="1"><stop offset="0" stop-color="#16324c"/><stop offset="1" stop-color="#0f2740"/></linearGradient></defs>
-    <rect x="0" y="0" width="1100" height="300" rx="14" fill="#0b1f33"/>
-    <g stroke="rgba(160,200,230,.07)"><line x1="40" y1="0" x2="40" y2="300"/><line x1="80" y1="0" x2="80" y2="300"/><line x1="120" y1="0" x2="120" y2="300"/><line x1="160" y1="0" x2="160" y2="300"/><line x1="200" y1="0" x2="200" y2="300"/><line x1="240" y1="0" x2="240" y2="300"/><line x1="280" y1="0" x2="280" y2="300"/><line x1="320" y1="0" x2="320" y2="300"/><line x1="360" y1="0" x2="360" y2="300"/><line x1="400" y1="0" x2="400" y2="300"/><line x1="440" y1="0" x2="440" y2="300"/><line x1="480" y1="0" x2="480" y2="300"/><line x1="520" y1="0" x2="520" y2="300"/><line x1="560" y1="0" x2="560" y2="300"/><line x1="600" y1="0" x2="600" y2="300"/><line x1="640" y1="0" x2="640" y2="300"/><line x1="680" y1="0" x2="680" y2="300"/><line x1="720" y1="0" x2="720" y2="300"/><line x1="760" y1="0" x2="760" y2="300"/><line x1="800" y1="0" x2="800" y2="300"/><line x1="840" y1="0" x2="840" y2="300"/><line x1="880" y1="0" x2="880" y2="300"/><line x1="920" y1="0" x2="920" y2="300"/><line x1="960" y1="0" x2="960" y2="300"/><line x1="1000" y1="0" x2="1000" y2="300"/><line x1="1040" y1="0" x2="1040" y2="300"/><line x1="1080" y1="0" x2="1080" y2="300"/><line x1="0" y1="40" x2="1100" y2="40"/><line x1="0" y1="80" x2="1100" y2="80"/><line x1="0" y1="120" x2="1100" y2="120"/><line x1="0" y1="160" x2="1100" y2="160"/><line x1="0" y1="200" x2="1100" y2="200"/><line x1="0" y1="240" x2="1100" y2="240"/><line x1="0" y1="280" x2="1100" y2="280"/></g>
-    <g fill="none" stroke="#2f5f7d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path id="pl" d="M150 228H250M310 228H380a20 20 0 0 0 20-20V120a20 20 0 0 1 20-20H600M680 100H800a20 20 0 0 1 20 20V160H900"/></g>
-    <g fill="none" stroke="#5ed3cc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="flowp"><path pathLength="100" d="M150 228H250M310 228H380a20 20 0 0 0 20-20V120a20 20 0 0 1 20-20H600M680 100H800a20 20 0 0 1 20 20V160H900"/></g>
-    <g stroke="#9fc4e2" stroke-width="2" fill="url(#vg)"><rect x="60" y="80" width="90" height="170" rx="45"/><circle cx="280" cy="228" r="30"/><path d="M600 80l40 20-40 20zM680 80l-40 20 40 20z"/><rect x="900" y="120" width="130" height="80" rx="40"/></g>
-    <g stroke="#9fc4e2" stroke-width="2" fill="none"><path d="M640 100V60"/><path d="M618 60h44a22 18 0 0 0-44 0z" fill="#16324c"/><path d="M265 213l30 15-30 15" /><path d="M910 145h110M910 175h110" stroke-dasharray="6 6"/></g>
-    <path d="M61 150H149V205a44 44 0 0 1-88 0z" fill="rgba(94,211,204,.22)"/><path d="M61 150H149" stroke="#5ed3cc" stroke-width="2" stroke-dasharray="5 5"/>
-    <g font-family="JetBrains Mono,monospace" font-size="13" fill="#c3d0dd"><text x="105" y="70" text-anchor="middle">V-101</text><text x="280" y="280" text-anchor="middle">P-102</text><text x="640" y="40" text-anchor="middle">FV-103</text><text x="965" y="225" text-anchor="middle">E-104</text></g>
-    <g class="callouts" font-family="Inter,sans-serif" font-size="12.5">
-      <g class="co" style="--d:0s"><circle cx="200" cy="228" r="5" fill="#5ed3cc"/><rect x="150" y="248" width="150" height="34" rx="8" fill="#12304a" stroke="#2c5a78"/><text x="160" y="270" fill="#e9f1f8">NPSH available 8.5 m</text></g>
-      <g class="co" style="--d:.4s"><circle cx="470" cy="100" r="5" fill="#5ed3cc"/><rect x="420" y="30" width="170" height="34" rx="8" fill="#12304a" stroke="#2c5a78"/><text x="430" y="52" fill="#e9f1f8">1.49 m/s · 0.12 bar/100 m</text></g>
-      <g class="co" style="--d:.8s"><circle cx="740" cy="100" r="5" fill="#e8b552"/><rect x="640" y="150" width="166" height="34" rx="8" fill="#12304a" stroke="#2c5a78"/><text x="650" y="172" fill="#e9f1f8">3 elbows + tee: ΔP 0.07 bar</text></g>
-      <g class="co" style="--d:1.2s"><circle cx="860" cy="160" r="5" fill="#5fc78e"/><rect x="870" y="230" width="170" height="34" rx="8" fill="#12304a" stroke="#2c5a78"/><text x="880" y="252" fill="#5fc78e">✔ Line size acceptable</text></g>
-    </g>
-  </svg></figure>
-  <ol class="pipeline">
-    <li class="rv"><b>Inputs</b><span>flow, P, T, service</span></li><li class="rv"><b>Properties</b><span>ρ, μ, Pv, k, Z per case</span></li><li class="rv"><b>Hydraulics</b><span>Colebrook, Crane K, compressible march</span></li><li class="rv"><b>Criteria</b><span>velocity, ΔP, ρv², Mach, NPSH</span></li><li class="rv"><b>Verdict</b><span>▲ / ✔ with the smallest passing size</span></li>
-  </ol>
-</div></section>
-
-<section class="s" id="flowsheet"><div class="w fsnew">
-  <div class="rv"><span class="tag">New · members</span><h2>Process flowsheet</h2>
-  <p class="sub" style="margin:0">Draw a plant system and solve it in one go, in the style of HYSYS: hydraulic networks the way EPANET or AFT Fathom do, and steam / water heat and material balances with turbines, heat exchangers, flash drums, desuperheaters and recycles.</p>
-  <ul><li><b>Hydraulic network:</b> pump curves, parallel pumps, check valves and loops; every pipe, pump and valve checked (velocity, NPSH, cavitation, choking). Validated against EPANET 2.2 and exact Colebrook solutions, 131 of 131</li>
-  <li><b>Control valves in the network:</b> flow and pressure controllers (FIC, pressure-reducing, back-pressure) held at their setpoints; minimum / normal / maximum cases, valve size recommendation, installed characteristic with gain and authority, and one-click hand-over to the Control Valve Sizing Manager</li>
-  <li><b>Heat &amp; material balance:</b> IAPWS-IF97 steam tables, 12 unit operations, automatic recycle convergence and a HYSYS-style stream workbook. Validated against the iapws IF97 implementation and independent balances, 80 of 80</li>
-  <li>Excel workbook and PDF report with the drawing</li></ul>
-  <p style="margin:0 0 16px;color:var(--muted)">Part of the members edition. Line Sizing Manager itself stays free. <a href="members/">Membership and terms</a>.</p>
-  <a class="btn primary" href="flowsheet/">Members sign in →</a></div>
-  <a class="rv" href="flowsheet/" aria-label="Flowsheet, members sign in"><img src="img/shot-flowsheet.jpg" alt="Flowsheet of a cooling-water system: pump, header, heat exchanger and valve branches, every line coloured by its check result" width="1400" height="643" loading="lazy"></a>
-</div></section>
-<section class="s" id="modules"><div class="w">
-  <h2>Eight modules, one workflow</h2>
-  <p class="sub">Pick the service and fluid, enter flow and conditions, and step the pipe size with ▶ until the verdict turns green. The size ladder marks the smallest size that passes.</p>
-  <div class="grid3 g4">
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h7l2-3 2 6 2-3h5"/></svg></span><span class="k">A</span>Liquid lines</h3><p>Velocity and ΔP limits by service and size band, minimum-flow check, NPSH available, flashing and crystallisation checks. Water, ammonia, urea solution and melt, carbamate.</p><span class="std">IAPWS-IF97 · Crane TP-410</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c3-6 5 4 8-2s5 4 8-2"/><path d="M4 9h3M17 19h3"/></svg></span><span class="k">B</span>Gas &amp; steam</h3><p>Compressible flow marched along the line with acceleration, Mach number, ρv², ΔP by pressure band and an optional API RP 14E erosional velocity check. Steam, CO₂, NH₃ vapour, syngas, natural gas, air and custom mixtures.</p><span class="std">IF97 · Peng–Robinson</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3"/><circle cx="16" cy="10" r="2"/><circle cx="15" cy="16" r="1.5"/></svg></span><span class="k">C</span>Two-phase</h3><p>Erosional velocity with your C-factor, Mandhane flow regime map that flags slug flow, homogeneous and Lockhart–Martinelli pressure drop for flashing condensate and ammonia letdown.</p><span class="std">API RP 14E · Mandhane map</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="2"/><path d="M3 12h18"/></svg></span><span class="k">D</span>Wall thickness</h3><p>Pressure design thickness, corrosion allowance and mill tolerance, with the minimum schedule and its MAWP. Editable allowable-stress table.</p><span class="std">ASME B31.3 §304.1.2</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8 5-8 5zM20 7l-8 5 8 5z"/><path d="M12 12V4M9 4h6"/></svg></span><span class="k">E</span>Quick Cv check</h3><p>A quick required-Cv and travel check on the line being sized, with choked-flow and cavitation flags, so the line and its valve are screened together.</p><span class="std">IEC 60534-2-1</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6M8 9h8l-2 6h-4z"/><path d="M12 15v6"/></svg></span><span class="k">F</span>Relief lines</h3><p>PSV inlet loss against the 3 % rule, built-up and total back pressure by valve type, tail-pipe exit Mach and choking.</p><span class="std">API 520 Part II · API 521</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="8"/><path d="M12 2v2M12 20v2"/></svg></span><span class="k">G</span>Heat loss &amp; insulation</h3><p>Heat loss per metre, surface temperature, condensate rate and annual energy for steam and hot lines; heat gain and sweating check for cold ammonia and chilled lines, with the minimum insulation thickness.</p><span class="std">ASTM C680 · ISO 12241</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="6"/><circle cx="11" cy="13" r="1.6"/><path d="M11 7h9v3h-4"/><path d="M5 19l-2 3h16l-2-3"/></svg></span><span class="k">H</span>Pump sizing</h3><p>Rated head, suction and discharge pressures, NPSH available against NPSH3 with the HI 9.6.1 margin, absorbed power and motor rating with the API 610 margin, shut-off and maximum discharge pressure, specific speeds and suction energy, HI 9.6.7 viscosity correction, system and pump curves, a vendor-offer check and an Excel process datasheet.</p><span class="std">API 610 · ANSI/HI 9.6.1 · HI 9.6.7</span></article>
-    <article class="card rv"><h3><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="k">H</span>Line list &amp; reports</h3><p>Every sized line goes into one project line list with its verdict. Export it to Excel or to an A3 PDF with a title block, plus a calculation sheet for each line.</p><span class="std">Excel · PDF · document control</span></article>
-  </div>
-  <p class="sub" style="margin-top:20px">Plus an itemised fittings editor (elbows, tees, valves, reducers and expanders at any size), °C/°F and m/ft units, ASME B36.10M or EN 10220 pipe, Excel and PDF line lists, calculation sheets and bulk import pasted from Excel.</p>
-</div></section>
-
-<section class="s alt" id="gallery"><div class="w">
-  <h2 class="rv">Inside the calculator</h2>
-  <p class="sub rv">Real screens from the free line sizing tool. Choose a module to see it.</p>
-  <div class="gal rv">
-    <div class="gtabs" role="tablist">
-      <button type="button" class="on" data-g="0">Liquid lines</button><button type="button" data-g="1">Gas &amp; steam</button><button type="button" data-g="2">Two-phase</button><button type="button" data-g="3">Wall thickness</button><button type="button" data-g="4">Relief lines</button>
-    </div>
-    <div class="gview">
-      <figure class="gi on"><img src="shot-liquid.jpg" width="1200" height="760" loading="lazy" alt="Liquid line sizing screen: ammonia pump suction, gauges for velocity, friction gradient and NPSH"><figcaption>Liquid ammonia pump suction: velocity, friction gradient, minimum-flow velocity and NPSH margin in one view.</figcaption></figure>
-      <figure class="gi"><img src="img/shot-gas.jpg" width="1200" height="760" loading="lazy" alt="Gas and steam screen: HP steam header with increase line size verdict"><figcaption>HP steam header: compressible flow marched along the line, ρv² and Mach, with ▲ “Apply 10"” when the line is too small.</figcaption></figure>
-      <figure class="gi"><img src="img/shot-twophase.jpg" width="1200" height="760" loading="lazy" alt="Two-phase screen: condensate flash drum line"><figcaption>Flashing condensate: API RP 14E erosional velocity, homogeneous and Lockhart–Martinelli pressure drop.</figcaption></figure>
-      <figure class="gi"><img src="img/shot-wall.jpg" width="1200" height="760" loading="lazy" alt="Wall thickness screen: minimum schedule result"><figcaption>ASME B31.3 wall thickness: pressure design thickness, allowances and the minimum schedule with its MAWP.</figcaption></figure>
-      <figure class="gi"><img src="img/shot-relief.jpg" width="1200" height="760" loading="lazy" alt="Relief valve line screen: PSV inlet loss and back pressure"><figcaption>PSV lines: inlet loss against the 3 % rule, built-up back pressure and tail-pipe exit Mach per API 520 / 521.</figcaption></figure>
-    </div>
-  </div>
-</div></section>
-
-<section class="marq" aria-label="Standards and methods"><div class="mq"><div class="mqi"><span>API 520 Part II</span><span>API 521</span><span>API RP 14E</span><span>ASME B31.3</span><span>ASME B36.10M</span><span>ASME B36.19M</span><span>EN 10220</span><span>Crane TP-410</span><span>IAPWS-IF97</span><span>IAPWS 2008</span><span>IEC 60534-2-1</span><span>Peng–Robinson</span><span>DIPPR 101/105</span><span>Colebrook–White</span><span>Lockhart–Martinelli</span><span>Thomson–Brobst–Hankinson</span><span>API 520 Part II</span><span>API 521</span><span>API RP 14E</span><span>ASME B31.3</span><span>ASME B36.10M</span><span>ASME B36.19M</span><span>EN 10220</span><span>Crane TP-410</span><span>IAPWS-IF97</span><span>IAPWS 2008</span><span>IEC 60534-2-1</span><span>Peng–Robinson</span><span>DIPPR 101/105</span><span>Colebrook–White</span><span>Lockhart–Martinelli</span><span>Thomson–Brobst–Hankinson</span></div></div></section>
-
-<section class="s" id="fluids"><div class="w"><h2 class="rv">Fluids built in</h2><p class="sub rv">Properties are calculated from temperature and pressure for every case, with an override for your simulation data.</p><div class="fl"><div class="fc rv" style="--d:0.00s"><b>H₂O</b><span>Water / BFW</span></div><div class="fc rv" style="--d:0.04s"><b>H₂O</b><span>Steam IF97</span></div><div class="fc rv" style="--d:0.08s"><b>NH₃</b><span>Liquid ammonia</span></div><div class="fc rv" style="--d:0.12s"><b>NH₃</b><span>Ammonia vapour</span></div><div class="fc rv" style="--d:0.16s"><b>CO(NH₂)₂</b><span>Urea solution</span></div><div class="fc rv" style="--d:0.20s"><b>CO(NH₂)₂</b><span>Urea melt</span></div><div class="fc rv" style="--d:0.24s"><b>NH₂COONH₄</b><span>Carbamate</span></div><div class="fc rv" style="--d:0.28s"><b>CO₂</b><span>Carbon dioxide</span></div><div class="fc rv" style="--d:0.32s"><b>H₂</b><span>Hydrogen</span></div><div class="fc rv" style="--d:0.36s"><b>N₂</b><span>Nitrogen</span></div><div class="fc rv" style="--d:0.40s"><b>O₂</b><span>Oxygen</span></div><div class="fc rv" style="--d:0.44s"><b>Air</b><span>Air</span></div><div class="fc rv" style="--d:0.48s"><b>CH₄</b><span>Natural gas</span></div><div class="fc rv" style="--d:0.52s"><b>3H₂+N₂</b><span>Synthesis gas</span></div><div class="fc rv" style="--d:0.56s"><b>CH₃OH</b><span>Methanol</span></div><div class="fc rv" style="--d:0.60s"><b>MEG-50</b><span>Glycol brine 50 %</span></div><div class="fc rv" style="--d:0.64s"><b>Ar</b><span>Argon</span></div><div class="fc rv" style="--d:0.68s"><b>CO</b><span>Carbon monoxide</span></div><div class="fc rv" style="--d:0.72s"><b>N₂·CO₂·H₂O</b><span>Flue gas</span></div><div class="fc rv" style="--d:0.76s"><b>H₂·CO·H₂O</b><span>Reformed gas</span></div><div class="fc rv new" style="--d:0.80s"><b>C₂H₅OH</b><span>Ethanol</span></div><div class="fc rv new" style="--d:0.83s"><b>C₇H₈</b><span>Toluene</span></div><div class="fc rv new" style="--d:0.86s"><b>C₆H₆</b><span>Benzene</span></div><div class="fc rv new" style="--d:0.89s"><b>C₆H₁₄</b><span>n-Hexane</span></div><div class="fc rv new" style="--d:0.92s"><b>C₇H₁₆</b><span>n-Heptane</span></div><div class="fc rv new" style="--d:0.95s"><b>C₆H₁₂</b><span>Cyclohexane</span></div><div class="fc rv new" style="--d:0.98s"><b>C₃H₈</b><span>Propane / LPG (liquid & gas)</span></div><div class="fc rv new" style="--d:1.01s"><b>C₄H₁₀</b><span>n-Butane (liquid & gas)</span></div><div class="fc rv new" style="--d:1.04s"><b>i-C₄H₁₀</b><span>Isobutane (liquid)</span></div><div class="fc rv new" style="--d:1.07s"><b>HTF</b><span>Therminol 66 hot oil</span></div><div class="fc rv new" style="--d:1.10s"><b>HTF</b><span>Syltherm 800 hot oil</span></div><div class="fc rv new" style="--d:1.13s"><b>SW</b><span>Seawater 3.5 %</span></div><div class="fc rv new" style="--d:1.16s"><b>C₂H₆</b><span>Ethane</span></div><div class="fc rv new" style="--d:1.19s"><b>H₂S</b><span>Hydrogen sulphide</span></div><div class="fc rv new" style="--d:1.22s"><b>He</b><span>Helium</span></div></div></div></section>
-
-<section class="s alt"><div class="w">
-  <h2>How it works</h2>
-  <p class="sub">Built the way a process engineer sizes a line, so the result reads like a calculation sheet rather than a single number.</p>
-  <ol class="steps">
-    <li class="rv"><b>Pick the service and fluid</b><span>The sizing criteria for pump suction, discharge, cooling water, steam or relief lines load automatically, and fluid properties are calculated for you.</span></li>
-    <li class="rv"><b>Enter flow, pressure and route</b><span>Use kg/h, t/h, lb/h, m³/h, USGPM, Nm³/h or MMSCFD. Add fittings by type and size, or use a quick percentage allowance.</span></li>
-    <li class="rv"><b>Iterate with ▶ until it turns green</b><span>Coloured gauges show how much of each limit is used. Add the line to the line list, then export the calculation sheet and the Excel or PDF line list.</span></li>
-  </ol>
-</div></section>
-
-<section class="s"><div class="w">
-  <h2>Who it is for</h2>
-  <div class="who" style="margin-top:20px">
-    <div class="card rv"><h3>Process engineers</h3><p>Quick, defensible line and valve sizing with the criteria shown, for studies, revamps and troubleshooting.</p></div>
-    <div class="card rv"><h3>EPC teams</h3><p>Consistent criteria, line lists and calculation sheets with document control on every page.</p></div>
-    <div class="card rv"><h3>Plant operations</h3><p>Check whether an existing line, valve or PSV installation can take a new rate.</p></div>
-    <div class="card rv"><h3>Students</h3><p>See how velocity, friction factor, fittings and NPSH interact as you change the size.</p></div>
-  </div>
-</div></section>
-
 <section class="s" id="guides"><div class="w">
   <h2 class="rv">Engineering guides</h2>
-  <p class="sub rv">Short guides with the method, the usual limits and a worked example from the calculator, checked by hand.</p>
-  <div class="grid3 g4"><a class="card rv gcard" href="guides/steam-line-sizing/"><span class="gtag">Steam</span><h3>How to size a steam line</h3><p>Velocity, gradient and Mach: a 110 barg header worked by hand.</p><span class="gmore">Read the guide →</span></a><a class="card rv gcard" href="guides/psv-inlet-outlet-lines/"><span class="gtag">Relief</span><h3>PSV inlet loss and back pressure</h3><p>The 3 % rule and why a 10 inch tail pipe fails.</p><span class="gmore">Read the guide →</span></a><a class="card rv gcard" href="guides/control-valve-cavitation/"><span class="gtag">Control valves</span><h3>Control valve cavitation</h3><p>σ, FL² and choked flow for a liquid ammonia valve.</p><span class="gmore">Read the guide →</span></a><a class="card rv gcard" href="guides/two-phase-line-sizing/"><span class="gtag">Two-phase</span><h3>Two-phase line sizing</h3><p>RP 14E erosional velocity and slug flow on the Mandhane map.</p><span class="gmore">Read the guide →</span></a></div>
-  <p class="rv" style="margin-top:16px"><a href="guides/">All guides →</a></p>
+  <p class="sub rv">Worked examples with the method, the numbers and the acceptance criterion, read from the tools' own built-in examples.</p>
+  <div class="more"><a href="guides/steam-line-sizing/">Steam line sizing</a><a href="guides/two-phase-line-sizing/">Two-phase line sizing</a><a href="guides/psv-inlet-outlet-lines/">PSV inlet and outlet lines</a><a href="guides/control-valve-cavitation/">Control valve cavitation</a></div>
 </div></section>
-<section class="s alt" id="faq"><div class="w">
-  <h2>Questions</h2>
-  <details><summary>Is it free?</summary><p>Yes. The web edition is free and needs no sign-up. It runs entirely in your browser.</p></details>
-  <details><summary>Which standards and methods does it use?</summary><p>Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness. Pipe dimensions follow ASME B36.10M/B36.19M or EN 10220.</p></details>
-  <details><summary>Is my data stored or sent anywhere?</summary><p>No. The page makes no network requests while you work. Saved lines stay in your own browser, and exports download straight to your computer.</p></details>
-  <details><summary>Can I use the results for design?</summary><p>Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specification and applicable codes before design, procurement or construction. The sizing criteria are typical EPC values and can be edited to match your project.</p></details>
-  <details><summary>Can my company use its own sizing criteria?</summary><p>Yes. Every velocity and pressure-drop limit is editable on the page. Suggestions for new features are welcome through LinkedIn.</p></details>
-</div></section>
-
-<section class="s" id="author"><div class="w">
+<section class="s alt" id="author"><div class="w">
   <h2>About the author</h2>
   <div class="card author">
     <p><b>Muhammad Anas</b> · Process Design Engineer</p>
-    <p>Five years in process design at a large ammonia–urea fertilizer complex, working on hydraulics, PSV sizing, control valves, revamps and process safety. I built Line Sizing Manager and share it free so students and engineers can learn how line sizing really works and run quick screening checks.</p>
+    <p>Four years in process design at a large ammonia–urea fertilizer complex, working on hydraulics, PSV sizing, control valves, revamps and process safety. I built ProcessDesk and share the core tools free so students and engineers can learn how line sizing really works and run quick screening checks.</p>
     <p><a class="btn ghost" href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
     <p class="note">Questions, corrections and feature ideas are welcome. Send me a message on LinkedIn.</p>
   </div>
 </div></section>
 
-<section class="s alt" id="validation"><div class="w">
-  <h2>How it was validated</h2>
-  <p class="sub">The calculator carries its own self-test: 112 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab, or read the <a href="validation/">full validation report</a> with every case, source and tolerance.</p>
-  <div class="val">
-    <table>
-      <thead><tr><th>Module</th><th class="n">Graded checks</th><th class="n">Largest deviation</th></tr></thead>
-      <tbody>
-        <tr><td>Liquid properties &amp; hydraulics</td><td class="n">131</td><td class="n ok">1.26 %</td></tr>
-        <tr><td>Fittings (Crane K)</td><td class="n">4</td><td class="n ok">0.94 %</td></tr>
-        <tr><td>Steam</td><td class="n">15</td><td class="n ok">0.12 %</td></tr>
-        <tr><td>Gases</td><td class="n">71</td><td class="n ok">4.18 %</td></tr>
-        <tr><td>Two-phase</td><td class="n">12</td><td class="n ok">2.65 %</td></tr>
-        <tr><td>Wall thickness</td><td class="n">16</td><td class="n ok">0.00 %</td></tr>
-        <tr><td>Flow regime (Mandhane map)</td><td class="n">30</td><td class="n ok">0.00 %</td></tr>
-        <tr><td>Heat loss &amp; insulation</td><td class="n">20</td><td class="n ok">0.35 %</td></tr>
-        <tr><td>RP 14E &amp; properties</td><td class="n">13</td><td class="n ok">0.89 %</td></tr>
-        <tr><td>Control valves</td><td class="n">6</td><td class="n ok">0.89 %</td></tr>
-        <tr><td>Pump sizing (API 610, HI 9.6.1, HI 9.6.7)</td><td class="n">47</td><td class="n ok">0.25 %</td></tr>
-      </tbody>
-    </table>
-    <div>
-      <p style="margin-top:0">References used:</p>
-      <ul class="refs">
-        <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air, methanol, argon) — the same basis as NIST REFPROP; its multi-fluid mixture model for flue gas and reformed gas; and the Melinder model for ethylene glycol brine; reference equations for ethane, propane, n- and isobutane, n-hexane, n-heptane, cyclohexane, benzene, toluene, ethanol, H₂S and helium; CoolProp incompressible data for Therminol 66, Syltherm 800 and seawater</li>
-        <li>The <i>fluids</i> engineering library: exact Colebrook solution, Crane TP-410 fittings, isothermal compressible flow, IEC 60534 valve sizing</li>
-        <li>Independent hand calculations for API RP 14E, Lockhart–Martinelli and ASME B31.3</li>
-        <li>Pump sizing: an independent energy-balance solver using CoolProp properties, the <i>fluids</i> Colebrook, Corripio and specific-speed functions, and the published ANSI/HI 9.6.7 worked example (Hydrocarbon Processing, March 2023)</li>
-        <li>The <i>fluids</i> Mandhane–Gregory–Aziz flow-pattern map, and an independent heat-loss solver built on the <i>ht</i> library (Churchill–Chu, Churchill–Bernstein and radiation, per ASTM C680 / ISO 12241)</li>
-      </ul>
-      <p style="color:var(--muted);font-size:14px">All 365 checks pass. The ammonia-vapour viscosity check, which read 5.2 % high until November 2026, now passes after the dense-gas viscosity correction was made to vanish at zero density.</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="cta-band"><div class="bg small" aria-hidden="true"><div class="bg-grid"></div><div class="bg-glow g1"></div><div class="bg-glow g2"></div>
-  <svg class="flow" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice">
-    <g class="pipe"><path d="M-20 560H340a24 24 0 0 0 24-24V444a24 24 0 0 1 24-24H880a24 24 0 0 0 24-24V250a24 24 0 0 1 24-24H1460"/><path d="M-20 110H200a24 24 0 0 1 24 24V300a24 24 0 0 0 24 24H560"/><path d="M1460 70H1150a24 24 0 0 0-24 24V560a24 24 0 0 1-24 24H660a24 24 0 0 0-24 24V660"/></g>
-    <g class="pulse"><path pathLength="1000" class="p1" d="M-20 560H340a24 24 0 0 0 24-24V444a24 24 0 0 1 24-24H880a24 24 0 0 0 24-24V250a24 24 0 0 1 24-24H1460"/><path pathLength="1000" class="p2" d="M-20 110H200a24 24 0 0 1 24 24V300a24 24 0 0 0 24 24H560"/><path pathLength="1000" class="p3" d="M1460 70H1150a24 24 0 0 0-24 24V560a24 24 0 0 1-24 24H660a24 24 0 0 0-24 24V660"/></g>
-    <g class="node"><circle cx="560" cy="324" r="7"/><circle cx="364" cy="490" r="4"/><circle cx="1126" cy="330" r="4"/></g>
-  </svg></div><div class="w">
-  <h2>Size your next line in a couple of minutes</h2>
-  <p>Open the calculator, load an example, and press ▶ until it turns green.</p>
-  <a class="btn primary" href="app/">Open the calculator — free</a>
-</div></section>
-</main>
-
-<section class="members" id="members"><div class="w">
-  <div class="mh rv"><span class="mtag"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> MEMBERS AREA · SEPARATE PRODUCT</span>
-    <h2>Control Valve Sizing Manager</h2>
-    <p>A dedicated control valve tool, separate from the free Line Sizing Manager and available to members only. Built the way EPC instrument and process teams size valves: from operating cases to a datasheet.</p></div>
-  <div class="mgrid">
-    <div class="mart rv"><svg viewBox="0 0 420 340" role="img" aria-label="Illustration of a globe control valve with a spring-diaphragm actuator">
-      <defs><linearGradient id="gd" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2e2266"/><stop offset="1" stop-color="#1c1542"/></linearGradient></defs>
-      <g stroke="#e8c87a" stroke-width="2" fill="url(#gd)">
-        <path d="M150 40h120a60 38 0 0 1-120 0z"/><rect x="140" y="76" width="140" height="10" rx="3"/>
-        <g class="stem"><rect x="205" y="86" width="10" height="92"/><rect x="186" y="120" width="48" height="16" rx="3"/></g>
-        <path d="M175 178h70l12 22H163z"/>
-        <path d="M60 230h70l40-30h80l40 30h70v60h-70l-40 30h-80l-40-30H60z"/>
-        <rect x="40" y="222" width="20" height="76" rx="3"/><rect x="360" y="222" width="20" height="76" rx="3"/>
-        <rect x="292" y="104" width="62" height="44" rx="6"/>
-      </g>
-      <g stroke="#e8c87a" stroke-width="1.5" fill="none" opacity=".8"><path d="M292 126h-58"/><path d="M323 148v30"/></g>
-      <g font-family="JetBrains Mono,monospace" font-size="11" fill="#e8c87a"><text x="210" y="30" text-anchor="middle">ACTUATOR</text><text x="323" y="131" text-anchor="middle">POS</text><text x="210" y="266" text-anchor="middle">BODY · TRIM</text></g>
-      <g class="vflow" fill="none" stroke-width="3" stroke-linecap="round"><path pathLength="100" d="M0 260H130"/><path pathLength="100" d="M290 260H420"/></g>
-    </svg></div>
-    <ul class="mfeat">
-      <li class="rv"><b>IEC 60534-2-1 sizing</b><span>Liquid, gas, steam and two-phase; Fp, FLP, xTP; choked flow and Reynolds correction</span></li>
-      <li class="rv"><b>Cavitation, flashing &amp; trim</b><span>xFz onset, FL² choking, omega (HEM) cross-check for flashing, and the number of trim stages from cavitation and trim-exit velocity head</span></li>
-      <li class="rv"><b>Noise prediction</b><span>IEC 60534-8-3 aerodynamic and 8-4 hydrodynamic, dBA at 1 m against your limit</span></li>
-      <li class="rv"><b>Installed characteristic</b><span>Pump and system curve to valve ΔP at every flow, installed gain and valve authority</span></li>
-      <li class="rv"><b>Actuator, rating &amp; leakage</b><span>Thrust and spring range, ASME B16.34 body rating check, FCI 70-2 allowable seat leakage</span></li>
-      <li class="rv"><b>Vendor data</b><span>Cv, FL, xT and Fd versus travel from the vendor, interpolated at each operating point</span></li>
-      <li class="rv"><b>Calculation report &amp; workbook</b><span>One-click PDF report with general-arrangement drawing, datasheet, inherent and installed curves and the full step-by-step calculation; Excel workbook with live IEC formulas</span></li>
-      <li class="rv"><b>Datasheet &amp; valve list</b><span>Datasheet in HTML and PDF and an instrument index for the project</span></li>
-      <li class="rv"><b>Validated</b><span>171 / 171 reference checks: the IEC worked examples, HEM integration and a benchmark against a commercial sizing program (within 0.2 %)</span></li>
-      <li class="rv"><b>Datasheet audit</b><span>Import a whole set of old EPC or vendor datasheets from Excel (kgf/cm², bar, psi) and re-check every valve to IEC 60534-2-1 in one go</span></li>
-    </ul>
-  </div>
-  <figure class="mshot rv"><img src="img/shot-valve.jpg" width="1200" height="760" loading="lazy" alt="Control Valve Sizing Manager screen: valve size acceptable, opening gauges and size ladder"><figcaption>Members edition: verdict, opening at each case and the size ladder.</figcaption></figure>
-  <table class="cmp"><thead><tr><th>Feature</th><th class="c">Free tools</th><th class="c">Members</th></tr></thead><tbody><tr><td>Line, steam, two-phase and PSV line sizing, B31.3 wall, insulation, pump sizing</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Quick control valve Cv check (IEC 60534-2-1)</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Full IEC 60534-2-1 sizing at minimum, normal and maximum cases with piping factors</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>IEC 60534-8-3 / 8-4 noise prediction</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Cavitation, flashing (omega method) and trim stage count</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Installed characteristic from the pump and system curve</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Actuator thrust, ASME B16.34 rating and FCI 70-2 leakage</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Vendor Cv / FL / xT data versus travel</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Calculation report (PDF) with drawing and curves; Excel workbook with live formulas</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Process flowsheet: hydraulic networks (pumps, valves, loops)</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Control valves in the flowsheet: flow / pressure controllers, case sizing, installed gain, export to the valve tool</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Steam / water heat &amp; material balance with recycles (IAPWS-IF97)</td><td class="nn">–</td><td class="y">✓</td></tr><tr><td>Valve list (instrument index) for a project</td><td class="nn">–</td><td class="y">✓</td></tr></tbody></table>
-  <div class="mcta rv"><a class="mbtn" href="valve/">Members sign in →</a><a class="mlink" href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Request access on LinkedIn</a><a class="mlink" href="members/">Membership &amp; terms</a></div>
-</div></section>
-
 <footer><div class="w cols">
   <div id="terms">
     <h3>Terms of use</h3>
-    <p>© 2026 Muhammad Anas · Line Sizing Manager. All rights reserved. The calculator is provided free for learning and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
+    <p>© 2026 Muhammad Anas · ProcessDesk. All rights reserved. The free tools are provided for learning and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
     <h3 id="privacy">Privacy</h3>
     <p>This site uses no cookies, no analytics and no tracking. Everything you type stays on your device.</p>
-    <p class="fver">Version 2026.11.10.1 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.10.1. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
+    <p class="fver">Version 2026.11.12.1 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). ProcessDesk engineering tools, version 2026.11.12.1. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
   </div>
   <div>
-    <h3>Line Sizing Manager</h3>
-    <p><a href="app/">Line sizing calculator</a><br><a href="#dashboard">Dashboard</a><br><a href="#gallery">Gallery</a><br><a href="#faq">FAQ</a><br><a href="#validation">How it was validated</a><br><a href="validation/">Full validation report</a><br><a href="guides/">Engineering guides</a><br><a href="#author">About the author</a><br><a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+    <h3>Free tools</h3>
+    <p><a href="app/">Line Sizing Manager</a><br><a href="app/#pump">Pump Sizing</a><br><a href="line-sizing/">About Line Sizing Manager</a><br><a href="guides/">Engineering guides</a><br><a href="validation/">Full validation report</a></p>
   </div>
   <div class="fmem">
     <h3>Members area</h3>
-    <p><a href="valve/">Control Valve Sizing Manager</a><br><a href="#members">What it includes</a></p>
+    <p><a href="valve/">Control Valve Sizing</a><br><a href="flowsheet/">Process Flowsheet</a><br><a href="members/">What members get</a></p>
   </div>
 </div></footer>
 <script>
@@ -556,7 +362,7 @@ else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e
 const tabs=[...document.querySelectorAll(".gtabs button")],items=[...document.querySelectorAll(".gi")];let gi=0,timer=null;
 const show=i=>{gi=i;tabs.forEach((b,k)=>{b.classList.toggle("on",k===i);b.setAttribute("aria-selected",k===i)});items.forEach((f,k)=>f.classList.toggle("on",k===i))};
 tabs.forEach((b,i)=>b.addEventListener("click",()=>{show(i);clearInterval(timer);timer=null}));
-if(!R){timer=setInterval(()=>show((gi+1)%items.length),5200);document.querySelector(".gal").addEventListener("mouseenter",()=>{clearInterval(timer);timer=null})}
+if(!R){timer=setInterval(()=>show((gi+1)%items.length),5200);document.querySelector(".gal")&&document.querySelector(".gal").addEventListener("mouseenter",()=>{clearInterval(timer);timer=null})}
 })();
 </script>
 </body>

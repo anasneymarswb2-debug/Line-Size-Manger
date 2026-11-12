@@ -25,6 +25,7 @@ footer{border-top:1px solid var(--line);margin-top:30px;padding:22px 0 34px;font
 @media (max-width:640px){body{font-size:15.5px}.top .cta{margin-left:0}table{font-size:13.5px}th,td{padding:6px 7px}}
 
 
+
 /*@theme-start*/
 :root,:root:not([data-theme="dark"]){--ink:#1c2630;--muted:#566370;--line:#d4dae1;--bg:#eef1f4;--panel:#ffffff;--soft:#f6f8fa;--navy:#14283b;--accent:#1f5fa0;--accent-soft:#e7eef6;--accent2:#1f5fa0;--teal-bright:#1f5fa0;--gold:#a8690b;
 --pass:#2e7d32;--pass-bg:#e8f3e9;--warn:#a65f00;--warn-bg:#fff3e0;--fail:#c62828;--fail-bg:#fdecea;--info:#1f5fa0;--info-bg:#e7eef6;--zone-ok:#cfe6d0;--zone-warn:#f6e0b8;--zone-bad:#f3c7c3;
