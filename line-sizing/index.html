@@ -12,7 +12,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-toacR8iP+t6BGVtv2YKYD2XN6t/DM71OTbXZvqd6fLQ=' 'sha256-gxah2rDGujQ0UCLWRu98RdfyTyomlpiwGrbPuARHI1I='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; script-src-attr 'none'">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Line Sizing Manager — line sizing calculator for process plants">
-<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 522 of 522 validation checks pass against reference data.">
+<meta property="og:description" content="Liquid, gas & steam, two-phase, control valves, PSV lines and B31.3 wall thickness in one free browser tool. 559 of 559 validation checks pass against reference data.">
 <meta property="og:url" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/line-sizing/">
 <meta property="og:image" content="https://anasneymarswb2-debug.github.io/Line-Size-Manger/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -29,7 +29,7 @@
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
  {"@type":"Question","name":"Is Line Sizing Manager free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The web edition is free and needs no sign-up. It runs entirely in your browser."}},
  {"@type":"Question","name":"Which standards and methods does it use?","acceptedAnswer":{"@type":"Answer","text":"Darcy–Weisbach with Colebrook–White friction, Crane TP-410 fittings, IAPWS-IF97 steam and water properties, Peng–Robinson gases, API RP 14E for two-phase lines, IEC 60534-2-1 for control valves, API 520 Part II and API 521 for relief valve piping, and ASME B31.3 for wall thickness."}},
- {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 148 reference cases. All 522 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
+ {"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"The calculator includes a self-test of 162 reference cases. All 559 graded checks agree with independent references (CoolProp reference equations of state, the fluids engineering library and hand calculations) within stated tolerances."}},
  {"@type":"Question","name":"Is my data stored or sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing you enter leaves your device. The page makes no network requests while you work, and saved lines stay in your own browser."}},
  {"@type":"Question","name":"Can I use the results for design?","acceptedAnswer":{"@type":"Answer","text":"Use them for screening and preliminary sizing. Results must be checked by a qualified engineer against the project specifications and applicable codes before design, procurement or construction."}}]}
 </script>
@@ -293,7 +293,7 @@ svg.flow{opacity:.45}
   <div class="dh rv"><span class="eye2">LIVE ENGINEERING DASHBOARD</span><h2>What a sizing run looks like</h2><p class="sub">A real case from the calculator: cooling water at 100 m³/h on pump discharge, NPS 2 to 8, Schedule 40 carbon steel. Every number below comes from the same engine you use.</p></div>
   <div class="kpis">
     <div class="kpi rv"><span class="kl">Calculation modules</span><b class="cnt" data-to="9">0</b><span class="ks">liquid · gas · two-phase · wall · Cv · PSV · fittings · insulation · pump</span></div>
-    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="522">0</span><small> / 522</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
+    <div class="kpi rv"><span class="kl">Validation checks passed</span><b><span class="cnt" data-to="559">0</span><small> / 559</small></b><span class="ks">against CoolProp, fluids and hand calcs</span></div>
     <div class="kpi rv"><span class="kl">Fluids with live properties</span><b class="cnt" data-to="59">0</b><span class="ks">IAPWS-IF97 · Peng–Robinson · DIPPR</span></div>
     <div class="kpi rv"><span class="kl">Crane fittings &amp; valves</span><b class="cnt" data-to="26">0</b><span class="ks">K = n·fT with reducers &amp; expanders</span></div>
   </div>
@@ -450,7 +450,7 @@ svg.flow{opacity:.45}
 
 <section class="s alt" id="validation"><div class="w">
   <h2>How it was validated</h2>
-  <p class="sub">The calculator carries its own self-test: 148 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab, or read the <a href="../validation/">full validation report</a> with every case, source and tolerance.</p>
+  <p class="sub">The calculator carries its own self-test: 162 reference cases rerun in your browser and compared with independent implementations. Run it any time from the Validation tab, or read the <a href="../validation/">full validation report</a> with every case, source and tolerance.</p>
   <div class="val">
     <table>
       <thead><tr><th>Module</th><th class="n">Graded checks</th><th class="n">Largest deviation</th></tr></thead>
@@ -465,7 +465,7 @@ svg.flow{opacity:.45}
         <tr><td>Heat loss &amp; insulation</td><td class="n">20</td><td class="n ok">0.35 %</td></tr>
         <tr><td>RP 14E &amp; properties</td><td class="n">13</td><td class="n ok">0.89 %</td></tr>
         <tr><td>Control valves</td><td class="n">6</td><td class="n ok">0.89 %</td></tr>
-        <tr><td>Pump sizing (API 610/674, HI 9.6.1, HI 9.6.7)</td><td class="n">77</td><td class="n ok">0.70 %</td></tr>
+        <tr><td>Pump sizing (API 610/674, HI 9.6.1, HI 9.6.7, affinity laws, operating cases)</td><td class="n">114</td><td class="n ok">2.35 %</td></tr>
       </tbody>
     </table>
     <div>
@@ -474,10 +474,10 @@ svg.flow{opacity:.45}
         <li>CoolProp reference equations of state (IAPWS-95, Span–Wagner CO₂, Setzmann–Wagner methane, Lemmon air, methanol, argon) — the same basis as NIST REFPROP; its multi-fluid mixture model for flue gas and reformed gas; and the Melinder model for ethylene glycol brine; reference equations for ethane, propane, n- and isobutane, n-hexane, n-heptane, cyclohexane, benzene, toluene, ethanol, H₂S and helium; CoolProp incompressible data for Therminol 66, Syltherm 800 and seawater</li>
         <li>The <i>fluids</i> engineering library: exact Colebrook solution, Crane TP-410 fittings, isothermal compressible flow, IEC 60534 valve sizing</li>
         <li>Independent hand calculations for API RP 14E, Lockhart–Martinelli and ASME B31.3</li>
-        <li>Pump sizing: an independent energy-balance solver using CoolProp properties, the <i>fluids</i> Colebrook, Corripio and specific-speed functions, and the published ANSI/HI 9.6.7 worked example (Hydrocarbon Processing, March 2023)</li>
+        <li>Pump sizing: an independent energy-balance solver using CoolProp properties, the <i>fluids</i> Colebrook, Corripio and specific-speed functions, and the published ANSI/HI 9.6.7 worked example (Hydrocarbon Processing, March 2023); impeller trim checked against the vendor maximum and minimum impeller curves of five plant pumps (affinity law within 2.5 % for diameter changes up to 15 %); speed, trim and annual energy against numpy / scipy</li>
         <li>The <i>fluids</i> Mandhane–Gregory–Aziz flow-pattern map, and an independent heat-loss solver built on the <i>ht</i> library (Churchill–Chu, Churchill–Bernstein and radiation, per ASTM C680 / ISO 12241)</li>
       </ul>
-      <p style="color:var(--muted);font-size:14px">All 522 checks pass. The ammonia-vapour viscosity check, which read 5.2 % high until November 2026, now passes after the dense-gas viscosity correction was made to vanish at zero density.</p>
+      <p style="color:var(--muted);font-size:14px">All 559 checks pass. The ammonia-vapour viscosity check, which read 5.2 % high until November 2026, now passes after the dense-gas viscosity correction was made to vanish at zero density.</p>
     </div>
   </div>
 </div></section>
@@ -537,7 +537,7 @@ svg.flow{opacity:.45}
     <p>© 2026 Muhammad Anas · Line Sizing Manager. All rights reserved. The calculator is provided free for learning and preliminary engineering. Results are indicative and must be verified by a qualified engineer; no liability is accepted for their use. Copying, redistribution, reverse engineering or commercial reuse of the software or its validation data is not permitted without written permission.</p>
     <h3 id="privacy">Privacy</h3>
     <p>This site uses no cookies, no analytics and no tracking. Everything you type stays on your device.</p>
-    <p class="fver">Version 2026.11.12.2 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.12.2. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
+    <p class="fver">Version 2026.11.14 · <a href="https://www.linkedin.com/in/muhammad-anas-a630a1227" target="_blank" rel="noopener noreferrer">Feedback or report an issue</a><br>How to cite: Anas, M. (2026). Line Sizing Manager, version 2026.11.14. https://anasneymarswb2-debug.github.io/Line-Size-Manger/</p>
   </div>
   <div>
     <h3>Line Sizing Manager</h3>
